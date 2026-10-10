@@ -1,0 +1,1438 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cuaderno Interactivo de Física 3 | Movimiento Ondulatorio — UTP</title>
+  <meta name="description" content="Cuaderno virtual interactivo de Física 3: Movimiento Ondulatorio y Principio de Superposición. Simulador de ondas con plano GeoGebra, teclado virtual, paleta de estilos y ventana modal ampliada.">
+
+  <!-- Tipografías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+  <!-- KaTeX -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Hojas de estilo -->
+  <link rel="stylesheet" href="css/notebook.css">
+  <link rel="stylesheet" href="css/wave-simulator.css">
+
+  <style>
+    /* ── Mini fix para alineación de portada ───────────── */
+    .notebook-page { display: none; }
+    .notebook-page.is-cover { display: flex; }
+  </style>
+</head>
+<body>
+
+<div id="app-container">
+
+  <!-- ════════════════════════════════════════════════════════════
+       BARRA SUPERIOR DE ACCIONES RÁPIDAS
+       ════════════════════════════════════════════════════════════ -->
+  <header class="top-nav-bar" role="banner">
+    <div class="top-nav-brand">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/>
+        <path d="M6 6h10M6 10h10"/>
+      </svg>
+      <span>FÍSICA 3</span>
+      <span class="badge-tag">UTP • 8vo Semestre</span>
+    </div>
+    <div class="top-nav-actions">
+      <button id="btn-toggle-toc" class="btn-top-action" title="Abrir Índice de Contenidos" aria-expanded="false">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <span>Índice</span>
+      </button>
+      <button id="btn-fullscreen" class="btn-top-action" title="Pantalla Completa">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ════════════════════════════════════════════════════════════
+       CUADERNO
+       ════════════════════════════════════════════════════════════ -->
+  <main class="notebook-viewport" id="notebook-viewport">
+
+    <!-- ══════════════════════════════════════════════════════════
+         PÁGINA 0: PORTADA
+         ══════════════════════════════════════════════════════════ -->
+    <section class="notebook-sheet is-cover notebook-page" id="page-0" aria-label="Portada del Cuaderno">
+      <div class="cover-image-container">
+        <img src="Imagenes/portada_fisica3_ondas_cuaderno.png"
+             alt="Portada Oficial de Física 3 — Movimiento Ondulatorio — UTP"
+             class="cover-image" id="cover-img"
+             onerror="this.style.background='linear-gradient(135deg,#065f46,#047857)';this.style.minHeight='600px';">
+        <div class="cover-interactive-overlay">
+          <div class="cover-cta-container">
+            <button id="btn-open-notebook" class="btn-open-notebook" aria-label="Abrir Cuaderno Virtual">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+              </svg>
+              <span>Abrir Cuaderno Virtual</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         PÁGINA 1: ÍNDICE DE CONTENIDOS
+         ══════════════════════════════════════════════════════════ -->
+    <section class="notebook-sheet is-content-page notebook-page" id="page-1" aria-label="Página 1: Índice">
+      <div class="page-inner-content">
+        <header class="page-editorial-header">
+          <div>
+            <div class="page-category-tag"><span>📑</span> Estructura Temática</div>
+            <h1 class="page-title">Índice General de Contenidos</h1>
+            <p class="page-subtitle">Guía de navegación secuencial y organización pedagógica</p>
+          </div>
+          <div class="page-number-indicator">Página 1</div>
+        </header>
+
+        <div class="concept-card">
+          <h2 class="concept-card-title"><span>🎯</span> Presentación del Cuaderno</h2>
+          <p>El presente cuaderno interactivo constituye una obra virtual de ingeniería didáctica desarrollada para el curso de <strong>Física 3</strong> en la <strong>Universidad Tecnológica de Pereira (UTP)</strong>. Su propósito es abordar con máximo rigor físico, precisión matemática y excelencia visual los fenómenos del <em>Movimiento Ondulatorio</em> y el <em>Principio de Superposición de Ondas</em>.</p>
+        </div>
+
+        <div class="scientific-table-wrapper">
+          <table class="scientific-table">
+            <thead><tr><th style="width:80px">Pág.</th><th>Sección / Módulo Temático</th><th>Contenido Clave & Recursos Interactivos</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Pág. 1</strong></td><td>Índice General y Presentación</td><td>Estructura secuencial, convenciones y objetivos pedagógicos.</td></tr>
+              <tr><td><strong>Pág. 2</strong></td><td>Mapa Mental Conceptual</td><td>Red conceptual interactiva de ondas, superposición y propagación.</td></tr>
+              <tr><td><strong>Pág. 3</strong></td><td>Línea de Tiempo Histórica</td><td>De Huygens (1678) a Hertz (1888): descubrimientos clave de la física ondulatoria.</td></tr>
+              <tr><td><strong>Pág. 4</strong></td><td>Conceptos y Definiciones Fundamentales</td><td>Longitud de onda, frecuencia, velocidad de propagación, frente de onda.</td></tr>
+              <tr><td><strong>Pág. 5</strong></td><td>Ecuación de Onda y Derivación</td><td>Ecuación diferencial de onda, solución general, ondas sinusoidales.</td></tr>
+              <tr><td><strong>Pág. 6</strong></td><td>Principio de Superposición</td><td>Superposición lineal, interferencia constructiva y destructiva, batidos.</td></tr>
+              <tr><td><strong>Pág. 7</strong></td><td>Laboratorio Virtual Interactivo</td><td>Simulador de ondas estilo GeoGebra, teclado virtual, paleta de estilos, ventana modal.</td></tr>
+              <tr><td><strong>Pág. 8</strong></td><td>Ejercicios Resueltos</td><td>Datos (azul), incógnitas (rojo), resultados (naranja), validación (verde).</td></tr>
+              <tr><td><strong>Pág. 9</strong></td><td>Glosario Científico</td><td>Términos, símbolos, unidades SI y buscador dinámico.</td></tr>
+              <tr><td><strong>Pág. 10</strong></td><td>Referencias Bibliográficas (APA 7)</td><td>Bibliografía universitaria con normas APA 7.</td></tr>
+            </tbody>
+          </table>
+          <div class="table-caption"><strong>Tabla 1:</strong> Estructura secuencial de las páginas del cuaderno interactivo de Movimiento Ondulatorio.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         PÁGINA 2: MAPA MENTAL
+         ══════════════════════════════════════════════════════════ -->
+    <section class="notebook-sheet is-content-page notebook-page" id="page-2" aria-label="Página 2: Mapa Mental">
+      <div class="page-inner-content">
+        <header class="page-editorial-header">
+          <div>
+            <div class="page-category-tag"><span>🧠</span> Arquitectura del Conocimiento</div>
+            <h1 class="page-title">Mapa Mental Conceptual — Movimiento Ondulatorio</h1>
+            <p class="page-subtitle">Interconexión de conceptos, ecuaciones y fenómenos ondulatorios</p>
+          </div>
+          <div class="page-number-indicator">Página 2</div>
+        </header>
+        <div class="mindmap-wrapper">
+          <div class="mindmap-container">
+            <div class="mindmap-root-node">🌊 MOVIMIENTO ONDULATORIO</div>
+            <div class="mindmap-branches">
+              <div class="mindmap-branch-card" style="border-top-color:#2563eb">
+                <div class="branch-title">📐 Tipos de Ondas</div>
+                <ul class="branch-subitems">
+                  <li class="branch-subitem">Mecánicas / Electromagnéticas</li>
+                  <li class="branch-subitem">Transversales / Longitudinales</li>
+                  <li class="branch-subitem">Progresivas / Estacionarias</li>
+                  <li class="branch-subitem">Planas / Esféricas / Cilíndricas</li>
+                </ul>
+              </div>
+              <div class="mindmap-branch-card" style="border-top-color:#059669">
+                <div class="branch-title">📏 Parámetros de Onda</div>
+                <ul class="branch-subitems">
+                  <li class="branch-subitem">Amplitud $A$ [m]</li>
+                  <li class="branch-subitem">Longitud de onda $\lambda$ [m]</li>
+                  <li class="branch-subitem">Período $T$ [s] / Frecuencia $f$ [Hz]</li>
+                  <li class="branch-subitem">Número de onda $k = 2\pi/\lambda$</li>
+                </ul>
+              </div>
+              <div class="mindmap-branch-card" style="border-top-color:#dc2626">
+                <div class="branch-title">⚡ Ecuación de Onda</div>
+                <ul class="branch-subitems">
+                  <li class="branch-subitem">$\frac{\partial^2 y}{\partial t^2} = v^2 \frac{\partial^2 y}{\partial x^2}$</li>
+                  <li class="branch-subitem">$y(x,t) = A\sen(kx - \omega t)$</li>
+                  <li class="branch-subitem">$v = \lambda \cdot f = \omega / k$</li>
+                  <li class="branch-subitem">Velocidad de fase / grupo</li>
+                </ul>
+              </div>
+              <div class="mindmap-branch-card" style="border-top-color:#7c3aed">
+                <div class="branch-title">🎵 Superposición</div>
+                <ul class="branch-subitems">
+                  <li class="branch-subitem">Principio de superposición lineal</li>
+                  <li class="branch-subitem">Interferencia constructiva/destructiva</li>
+                  <li class="branch-subitem">Batidos $f_{bat} = |f_1 - f_2|$</li>
+                  <li class="branch-subitem">Ondas estacionarias, nodos, antinodos</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="figure-wrapper">
+          <div class="figure-caption"><span class="figure-number">Ilustración 1:</span> Red conceptual y jerarquía de conceptos del Movimiento Ondulatorio y el Principio de Superposición.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         PÁGINA 3: LÍNEA DE TIEMPO
+         ══════════════════════════════════════════════════════════ -->
+    <section class="notebook-sheet is-content-page notebook-page" id="page-3" aria-label="Página 3: Historia">
+      <div class="page-inner-content">
+        <header class="page-editorial-header">
+          <div>
+            <div class="page-category-tag"><span>⏳</span> Evolución de la Ciencia</div>
+            <h1 class="page-title">Línea de Tiempo y Reseña Histórica</h1>
+            <p class="page-subtitle">Hitos cronológicos en el descubrimiento de la naturaleza ondulatoria de la luz y el sonido</p>
+          </div>
+          <div class="page-number-indicator">Página 3</div>
+        </header>
+
+        <div class="concept-card">
+          <h2 class="concept-card-title"><span>📜</span> Reseña Histórica: De Huygens a Einstein</h2>
+          <p style="text-align:justify">La comprensión del movimiento ondulatorio ha recorrido siglos de observación, controversia y síntesis matemática. En 1678, <strong>Christiaan Huygens</strong> propuso el principio que lleva su nombre: cada punto de un frente de onda actúa como fuente de ondas secundarias, explicando la reflexión y refracción de la luz. Décadas después, <strong>Thomas Young</strong> (1801) demostró experimentalmente la <em>interferencia</em> de la luz al hacer pasar un haz luminoso por dos rendijas, confirmando su naturaleza ondulatoria. <strong>Augustin-Jean Fresnel</strong> complementó este trabajo con la teoría ondulatoria completa de la difracción. Finalmente, <strong>James Clerk Maxwell</strong> (1865) unificó electricidad y magnetismo, prediciendo las ondas electromagnéticas que <strong>Heinrich Hertz</strong> confirmó experimentalmente en 1888.</p>
+        </div>
+
+        <div class="timeline-wrapper">
+          <div class="timeline-milestone">
+            <div class="milestone-marker">🌊</div>
+            <div class="milestone-content">
+              <div class="milestone-header">
+                <span class="milestone-year">1678</span>
+                <span class="milestone-author">Christiaan Huygens</span>
+              </div>
+              <div class="milestone-discovery">Principio de Huygens: cada punto del frente de onda es fuente de ondas secundarias esféricas. Explica reflexión y refracción de la luz.</div>
+            </div>
+          </div>
+          <div class="timeline-milestone">
+            <div class="milestone-marker">💡</div>
+            <div class="milestone-content">
+              <div class="milestone-header">
+                <span class="milestone-year">1801</span>
+                <span class="milestone-author">Thomas Young</span>
+              </div>
+              <div class="milestone-discovery">Experimento de la doble rendija: demostración experimental de la interferencia luminosa, confirmando la naturaleza ondulatoria de la luz.</div>
+            </div>
+          </div>
+          <div class="timeline-milestone">
+            <div class="milestone-marker">🔭</div>
+            <div class="milestone-content">
+              <div class="milestone-header">
+                <span class="milestone-year">1818</span>
+                <span class="milestone-author">Augustin-Jean Fresnel</span>
+              </div>
+              <div class="milestone-discovery">Teoría ondulatoria completa de la difracción. Explica que la luz rodea obstáculos; deducción matemática de los patrones de difracción.</div>
+            </div>
+          </div>
+          <div class="timeline-milestone">
+            <div class="milestone-marker">⚡</div>
+            <div class="milestone-content">
+              <div class="milestone-header">
+                <span class="milestone-year">1865</span>
+                <span class="milestone-author">James Clerk Maxwell</span>
+              </div>
+              <div class="milestone-discovery">Ecuaciones de Maxwell: unificación del electromagnetismo. Predicción teórica de las ondas electromagnéticas que viajan a la velocidad de la luz.</div>
+            </div>
+          </div>
+          <div class="timeline-milestone">
+            <div class="milestone-marker">📡</div>
+            <div class="milestone-content">
+              <div class="milestone-header">
+                <span class="milestone-year">1888</span>
+                <span class="milestone-author">Heinrich Hertz</span>
+              </div>
+              <div class="milestone-discovery">Confirmación experimental de las ondas electromagnéticas de radio. Primera transmisión y detección de ondas herzianas, validando las predicciones de Maxwell.</div>
+            </div>
+          </div>
+        </div>
+        <div class="figure-wrapper">
+          <div class="figure-caption"><span class="figure-number">Ilustración 2:</span> Cronología de los principales descubrimientos en física ondulatoria, de Huygens (1678) a Hertz (1888).</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         PÁGINA 4: CONCEPTOS Y DEFINICIONES
+         ══════════════════════════════════════════════════════════ -->
+    <section class="notebook-sheet is-content-page notebook-page" id="page-4" aria-label="Página 4: Conceptos">
+      <div class="page-inner-content">
+        <header class="page-editorial-header">
+          <div>
+            <div class="page-category-tag"><span>📐</span> Fundamentación Teórica</div>
+            <h1 class="page-title">Conceptos y Definiciones Fundamentales</h1>
+            <p class="page-subtitle">Parámetros cinemáticos y magnitudes en el Sistema Internacional de Medidas</p>
+          </div>
+          <div class="page-number-indicator">Página 4</div>
+        </header>
+
+        <div class="concept-card">
+          <h2 class="concept-card-title"><span>1.</span> Definición de Onda</h2>
+          <p>Una <strong>onda</strong> es una perturbación que se propaga por un medio (o el vacío) transportando <em>energía</em> sin transportar materia. Matemáticamente, una onda unidimensional satisface la condición de que su perfil espacial avanza en el tiempo:</p>
+          <div class="equation-block">
+            <div class="equation-content">$$y(x, t) = f(x - vt) \quad \text{(onda que viaja en } +x\text{)}$$</div>
+            <div class="equation-tag">Ec. (1)</div>
+          </div>
+          <div class="equation-block">
+            <div class="equation-content">$$y(x, t) = g(x + vt) \quad \text{(onda que viaja en } -x\text{)}$$</div>
+            <div class="equation-tag">Ec. (2)</div>
+          </div>
+        </div>
+
+        <div class="concept-card">
+          <h2 class="concept-card-title"><span>2.</span> Parámetros de la Onda Sinusoidal</h2>
+          <p>La onda sinusoidal progresiva es la solución más general de la ecuación de onda lineal:</p>
+          <div class="equation-block">
+            <div class="equation-content">$$y(x,t) = A \cdot \text{sen}(kx - \omega t + \varphi_0)$$</div>
+            <div class="equation-tag">Ec. (3)</div>
+          </div>
+          <div class="scientific-table-wrapper">
+            <table class="scientific-table">
+              <thead><tr><th>Magnitud</th><th>Símbolo</th><th>Definición</th><th>Unidad SI</th></tr></thead>
+              <tbody>
+                <tr><td>Amplitud</td><td>$A$</td><td>Desplazamiento máximo respecto al equilibrio</td><td>m</td></tr>
+                <tr><td>Número de onda</td><td>$k$</td><td>$k = \dfrac{2\pi}{\lambda}$</td><td>rad/m</td></tr>
+                <tr><td>Frecuencia angular</td><td>$\omega$</td><td>$\omega = 2\pi f = \dfrac{2\pi}{T}$</td><td>rad/s</td></tr>
+                <tr><td>Longitud de onda</td><td>$\lambda$</td><td>Distancia espacial de un ciclo completo</td><td>m</td></tr>
+                <tr><td>Período</td><td>$T$</td><td>Tiempo de un ciclo completo</td><td>s</td></tr>
+                <tr><td>Frecuencia</td><td>$f$</td><td>$f = 1/T$ ciclos por segundo</td><td>Hz</td></tr>
+                <tr><td>Velocidad de fase</td><td>$v$</td><td>$v = \dfrac{\omega}{k} = \lambda f$</td><td>m/s</td></tr>
+                <tr><td>Fase inicial</td><td>$\varphi_0$</td><td>Desplazamiento de fase en $t=0,\, x=0$</td><td>rad</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table-caption"><strong>Tabla 2:</strong> Magnitudes fundamentales de la onda sinusoidal progresiva.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         PÁGINA 5: ECUACIÓN DE ONDA
+         ══════════════════════════════════════════════════════════ -->
+    <section class="notebook-sheet is-content-page notebook-page" id="page-5" aria-label="Página 5: Ecuación de Onda">
+      <div class="page-inner-content">
+        <header class="page-editorial-header">
+          <div>
+            <div class="page-category-tag"><span>🔬</span> Dinámica Ondulatoria</div>
+            <h1 class="page-title">Ecuación de Onda y Derivación</h1>
+            <p class="page-subtitle">Deducción de la ecuación diferencial de ondas y análisis de sus soluciones</p>
+          </div>
+          <div class="page-number-indicator">Página 5</div>
+        </header>
+
+        <div class="concept-card">
+          <h2 class="concept-card-title"><span>1.</span> Ecuación Diferencial de Onda</h2>
+          <p>La <strong>ecuación de onda lineal unidimensional</strong> es una ecuación diferencial en derivadas parciales que describe la propagación de perturbaciones en medios lineales:</p>
+          <div class="equation-block">
+            <div class="equation-content">$$\frac{\partial^2 y}{\partial t^2} = v^2 \frac{\partial^2 y}{\partial x^2}$$</div>
+            <div class="equation-tag">Ec. (4)</div>
+          </div>
+          <p>donde $v$ es la velocidad de propagación de la onda en el medio.</p>
+        </div>
+
+        <div class="concept-card">
+          <h2 class="concept-card-title"><span>2.</span> Verificación de la Solución Sinusoidal</h2>
+          <p>Se propone la solución general $y(x,t) = A\,\text{sen}(kx - \omega t)$. Derivando dos veces:</p>
+          <div class="equation-block">
+            <div class="equation-content">$$\frac{\partial^2 y}{\partial t^2} = -\omega^2 A\,\text{sen}(kx-\omega t) \qquad \frac{\partial^2 y}{\partial x^2} = -k^2 A\,\text{sen}(kx-\omega t)$$</div>
+            <div class="equation-tag">Ec. (5)</div>
+          </div>
+          <p>Sustituyendo en la ecuación de onda: $-\omega^2 = v^2(-k^2)$, por lo tanto:</p>
+          <div class="equation-block">
+            <div class="equation-content">$$v = \frac{\omega}{k} \quad \Longleftrightarrow \quad v = \lambda f$$</div>
+            <div class="equation-tag">Ec. (6)</div>
+          </div>
+        </div>
+
+        <div class="concept-card">
+          <h2 class="concept-card-title"><span>3.</span> Energía de una Onda</h2>
+          <p>La densidad de energía por unidad de longitud en una onda mecánica sinusoidal es:</p>
+          <div class="equation-block">
+            <div class="equation-content">$$u = \frac{1}{2}\mu \omega^2 A^2$$</div>
+            <div class="equation-tag">Ec. (7)</div>
+          </div>
+          <p>y la potencia promedio transmitida es $P = \dfrac{1}{2}\mu v \omega^2 A^2$, proporcional al <em>cuadrado de la amplitud</em>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         PÁGINA 6: PRINCIPIO DE SUPERPOSICIÓN
+         ══════════════════════════════════════════════════════════ -->
+    <section class="notebook-sheet is-content-page notebook-page" id="page-6" aria-label="Página 6: Superposición">
+      <div class="page-inner-content">
+        <header class="page-editorial-header">
+          <div>
+            <div class="page-category-tag"><span>🎵</span> Superposición de Ondas</div>
+            <h1 class="page-title">Principio de Superposición</h1>
+            <p class="page-subtitle">Interferencia, batidos y formación de ondas estacionarias</p>
+          </div>
+          <div class="page-number-indicator">Página 6</div>
+        </header>
+
+        <div class="concept-card">
+          <h2 class="concept-card-title"><span>🎯</span> Enunciado del Principio</h2>
+          <p>El <strong>principio de superposición</strong> establece que cuando dos o más ondas coinciden en un punto del espacio, el desplazamiento resultante es la <em>suma algebraica</em> de los desplazamientos individuales:</p>
+          <div class="equation-block">
+            <div class="equation-content">$$y_{\text{res}}(x,t) = \sum_{i=1}^{N} y_i(x,t) = y_1 + y_2 + \cdots + y_N$$</div>
+            <div class="equation-tag">Ec. (8)</div>
+          </div>
+          <p>Este principio es válido mientras el medio sea <strong>lineal</strong> (la respuesta es proporcional a la perturbación).</p>
+        </div>
+
+        <div class="concept-card">
+          <h2 class="concept-card-title"><span>⚡</span> Interferencia Constructiva y Destructiva</h2>
+          <p>Para dos ondas sinusoidales de la misma frecuencia y amplitud que viajan en la misma dirección con diferencia de fase $\Delta\varphi$:</p>
+          <div class="equation-block">
+            <div class="equation-content">$$y_1 + y_2 = 2A\cos\!\left(\frac{\Delta\varphi}{2}\right)\text{sen}\!\left(kx - \omega t + \frac{\Delta\varphi}{2}\right)$$</div>
+            <div class="equation-tag">Ec. (9)</div>
+          </div>
+          <div class="block-datos">
+            <strong>Interferencia constructiva:</strong> $\Delta\varphi = 0, 2\pi, 4\pi, \ldots$ → amplitud máxima $2A$
+          </div>
+          <div class="block-incognitas">
+            <strong>Interferencia destructiva:</strong> $\Delta\varphi = \pi, 3\pi, 5\pi, \ldots$ → amplitud nula (cancelación)
+          </div>
+        </div>
+
+        <div class="concept-card">
+          <h2 class="concept-card-title"><span>🎵</span> Batidos</h2>
+          <p>Cuando dos ondas de <em>frecuencias cercanas</em> $f_1$ y $f_2$ se superponen, se producen variaciones periódicas de amplitud llamadas <strong>batidos</strong>:</p>
+          <div class="equation-block">
+            <div class="equation-content">$$f_{\text{batido}} = |f_1 - f_2|$$</div>
+            <div class="equation-tag">Ec. (10)</div>
+          </div>
+        </div>
+
+        <div class="didactic-box">
+          <div class="didactic-title"><span>🧪</span> Fenómeno Observado</div>
+          <div class="didactic-content">
+            Cuando dos pulsos viajan en sentidos opuestos y se encuentran, se superponen momentáneamente y luego continúan su trayectoria como si no hubieran interactuado. Este es el <em>principio de superposición en acción</em>: la onda resultante en el instante de cruce es la suma de ambas, pero cada onda mantiene su identidad.
+          </div>
+        </div>
+
+        <div class="question-box">
+          <div class="question-box-title"><span>❓</span> Preguntas Orientadoras</div>
+          <div class="question-box-content">
+            <ul class="didactic-questions">
+              <li>¿Qué ocurre cuando dos pulsos idénticos se encuentran? ¿Y si tienen signos opuestos?</li>
+              <li>¿La amplitud de la onda resultante puede ser mayor que cualquiera de las componentes?</li>
+              <li>Si ocultas una onda del gráfico, ¿la resultante cambia? ¿Y si la excluyes de la suma?</li>
+              <li>¿En qué posición $x$ es máxima la resultante en este instante $t$?</li>
+              <li>¿Cómo cambia la resultante si aumentas la frecuencia de una de las ondas?</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         PÁGINA 7: LABORATORIO VIRTUAL INTERACTIVO
+         ══════════════════════════════════════════════════════════ -->
+    <section class="notebook-sheet is-content-page notebook-page" id="page-7" aria-label="Página 7: Simulador de Ondas">
+      <div class="page-inner-content">
+        <header class="page-editorial-header">
+          <div>
+            <div class="page-category-tag"><span>🔭</span> Laboratorio Virtual</div>
+            <h1 class="page-title">Simulador Interactivo de Ondas</h1>
+            <p class="page-subtitle">Plano cartesiano estilo GeoGebra · Principio de superposición · Tiempo real</p>
+          </div>
+          <div class="page-number-indicator">Página 7</div>
+        </header>
+
+        <!-- ── SIMULADOR ─────────────────────────────────────── -->
+        <div class="wave-simulator-wrap" id="wave-simulator">
+
+          <!-- Barra de herramientas del simulador -->
+          <div class="sim-toolbar" role="toolbar" aria-label="Controles del simulador">
+
+            <!-- Controles de reproducción -->
+            <button id="sim-btn-play" class="btn-sim-play" aria-label="Reproducir/Pausar animación">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21"/></svg>
+              <span>Reproducir</span>
+            </button>
+            <button id="sim-btn-reset" class="btn-tool" title="Reiniciar tiempo" aria-label="Reiniciar">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-4"/></svg>
+            </button>
+
+            <div class="sim-toolbar-sep"></div>
+
+            <!-- Velocidad -->
+            <span class="sim-speed-label">Vel:</span>
+            <input type="range" id="sim-speed-slider" class="sim-speed-slider" min="0.1" max="5" step="0.1" value="1" aria-label="Velocidad de animación">
+            <span id="sim-speed-val" style="font-size:.78rem;color:#64748b;font-weight:700;min-width:28px">×1.0</span>
+
+            <div class="sim-toolbar-sep"></div>
+
+            <!-- Modos -->
+            <div class="sim-toolbar-group" role="group" aria-label="Modos de interacción">
+              <button id="sim-btn-pan" class="btn-tool is-active" title="Arrastrar lienzo" aria-label="Modo arrastrar">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 9l-3 3 3 3M9 5l3-3 3 3M15 19l-3 3-3-3M19 9l3 3-3 3M2 12h20M12 2v20"/></svg>
+              </button>
+              <button id="sim-btn-inspect" class="btn-tool" title="Inspeccionar valores en x" aria-label="Modo inspector">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              </button>
+            </div>
+
+            <!-- Zoom -->
+            <div class="sim-toolbar-group" role="group" aria-label="Zoom">
+              <button id="sim-btn-zoomin" class="btn-tool" title="Acercar (zoom in)" aria-label="Acercar">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              </button>
+              <button id="sim-btn-zoomout" class="btn-tool" title="Alejar (zoom out)" aria-label="Alejar">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              </button>
+              <button id="sim-btn-reset-view" class="btn-tool" title="Restablecer vista" aria-label="Restablecer vista">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+              </button>
+            </div>
+
+            <div class="sim-toolbar-sep"></div>
+
+            <!-- Botón Medición de Longitud de Onda (λ) -->
+            <button id="btn-toggle-lambda" class="btn-tool is-active" title="Visualizar cota de longitud de onda (λ)" aria-pressed="true" style="gap:5px;font-weight:700;color:#059669;border-color:rgba(5,150,105,0.4);background:rgba(5,150,105,0.12)">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 8l16 0M4 16l16 0M4 5v6M20 5v6M4 13v6M20 13v6"/></svg>
+              <span>Ver λ</span>
+            </button>
+
+            <!-- Selector de unidades -->
+            <select id="sim-unit-select" class="palette-select" title="Unidades del plano cartesiano" style="padding:4px 8px;font-size:.78rem;font-weight:700;color:#0f2744;background:#f8fafc;border:1px solid #cbd5e1;border-radius:6px;cursor:pointer">
+              <option value="cm" selected>cm, s</option>
+              <option value="m">m, s</option>
+            </select>
+
+            <div class="sim-toolbar-sep"></div>
+
+            <!-- Paleta y Modal -->
+            <button id="btn-open-palette" class="btn-open-palette" aria-label="Abrir paleta de estilos">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
+              Paleta de Estilos
+            </button>
+
+            <button id="btn-open-modal" class="btn-open-modal" aria-label="Abrir en ventana modal ampliada">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+              Ampliar
+            </button>
+          </div>
+
+          <!-- Layout principal: panel + canvas -->
+          <div class="sim-main-layout">
+
+            <!-- Panel de control izquierdo -->
+            <aside class="sim-control-panel" aria-label="Panel de ondas">
+              <div class="sim-panel-tabs" role="tablist">
+                <button class="btn-panel-tab is-active" data-tab="ondas" role="tab" aria-selected="true">🌊 Ondas</button>
+                <button class="btn-panel-tab" data-tab="parametros" role="tab" aria-selected="false">📐 Parámetros (cm, s)</button>
+                <button class="btn-panel-tab" data-tab="ejemplos" role="tab" aria-selected="false">📚 Ejemplos</button>
+                <button class="btn-panel-tab" data-tab="info" role="tab" aria-selected="false">💡 Guía</button>
+              </div>
+
+              <!-- Tab: Ondas -->
+              <div class="sim-panel-body sim-tab-content" id="tab-ondas" role="tabpanel">
+                <!-- Lista de ondas -->
+                <div id="wave-list-container"></div>
+
+                <!-- Resultante -->
+                <div class="resultant-card">
+                  <div class="resultant-card-title">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    Onda Resultante (Superposición)
+                  </div>
+                  <div class="resultant-toggle-row">
+                    <span class="resultant-label">Mostrar resultante:</span>
+                    <label class="wave-toggle">
+                      <input type="checkbox" id="resultant-toggle" checked>
+                      <span class="wave-toggle-slider"></span>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Botón agregar onda -->
+                <button id="btn-add-wave" class="btn-add-wave" aria-label="Agregar nueva onda">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  Agregar onda
+                </button>
+              </div>
+
+              <!-- Tab: Parámetros Físicos (cm, s) -->
+              <div class="sim-panel-body sim-tab-content" id="tab-parametros" role="tabpanel" style="display:none">
+                <div class="didactic-box" style="margin-bottom:12px;background:#f0fdf4;border-color:#86efac">
+                  <div class="didactic-title" style="color:#065f46">🎯 Simulación en Centímetros y Segundos</div>
+                  <p style="font-size:.82rem;color:#166534;margin-top:4px">Ajuste directamente los parámetros físicos. Las distancias se computan en centímetros y el tiempo en segundos, con visualización gráfica de la longitud de onda $\lambda$.</p>
+                </div>
+
+                <div class="palette-section" style="padding:0;margin-bottom:12px">
+                  <div class="palette-section-title">Amplitud $A$ [cm]</div>
+                  <div class="palette-row">
+                    <input type="range" id="param-amplitude" class="palette-range" min="0.5" max="8" step="0.5" value="3">
+                    <span id="param-amp-val" class="palette-range-value">3.0 cm</span>
+                  </div>
+                </div>
+
+                <div class="palette-section" style="padding:0;margin-bottom:12px">
+                  <div class="palette-section-title">Longitud de onda $\lambda$ [cm]</div>
+                  <div class="palette-row">
+                    <input type="range" id="param-lambda" class="palette-range" min="2" max="16" step="0.5" value="8">
+                    <span id="param-lambda-val" class="palette-range-value">8.0 cm</span>
+                  </div>
+                </div>
+
+                <div class="palette-section" style="padding:0;margin-bottom:12px">
+                  <div class="palette-section-title">Frecuencia $f$ [Hz] / Período $T$ [s]</div>
+                  <div class="palette-row">
+                    <input type="range" id="param-freq" class="palette-range" min="0.1" max="3" step="0.1" value="0.5">
+                    <span id="param-freq-val" class="palette-range-value">0.50 Hz</span>
+                  </div>
+                </div>
+
+                <!-- Resumen de valores deducidos -->
+                <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:12px;display:flex;flex-direction:column;gap:6px;font-size:.82rem">
+                  <div style="display:flex;justify-content:space-between"><span>Velocidad de propagación ($v$):</span> <strong id="param-calc-v" style="color:#2563eb">4.00 cm/s</strong></div>
+                  <div style="display:flex;justify-content:space-between"><span>Período ($T$):</span> <strong id="param-calc-t" style="color:#059669">2.00 s</strong></div>
+                  <div style="display:flex;justify-content:space-between"><span>Número de onda ($k$):</span> <strong id="param-calc-k" style="color:#7c3aed">0.785 rad/cm</strong></div>
+                  <div style="display:flex;justify-content:space-between"><span>Frecuencia angular ($\omega$):</span> <strong id="param-calc-omega" style="color:#ea580c">3.142 rad/s</strong></div>
+                  <div style="margin-top:6px;padding-top:6px;border-top:1px dashed #cbd5e1;font-family:var(--font-mono);font-size:.78rem;color:#0f2744;text-align:center" id="param-eq-preview">
+                    y(x,t) = 3 · sen(0.785x - 3.142t)
+                  </div>
+                </div>
+
+                <button id="btn-apply-phys-params" class="btn-add-wave" style="margin-top:12px;background:#059669">
+                  <span>Actualizar Onda en el Simulador</span>
+                </button>
+              </div>
+
+              <!-- Tab: Ejemplos -->
+              <div class="sim-panel-body sim-tab-content" id="tab-ejemplos" role="tabpanel" style="display:none">
+                <div id="examples-container" class="examples-grid"></div>
+              </div>
+
+              <!-- Tab: Guía -->
+              <div class="sim-panel-body sim-tab-content" id="tab-info" role="tabpanel" style="display:none">
+                <div class="didactic-box">
+                  <div class="didactic-title">🧪 ¿Qué puedo hacer?</div>
+                  <div class="didactic-content">
+                    <ul style="padding-left:16px;margin-top:6px;display:flex;flex-direction:column;gap:5px;">
+                      <li>Escribe <strong>cualquier expresión</strong> matemática: senos, cosenos, gaussianas, etc.</li>
+                      <li>Usa las variables <code>x</code>, <code>t</code>, <code>v</code> (velocidad).</li>
+                      <li>Activa/desactiva ondas con el toggle.</li>
+                      <li>Excluye una onda de la suma sin ocultarla.</li>
+                      <li>Usa el inspector para ver valores en cualquier $x$.</li>
+                      <li>Arrastra con el ratón o los dedos para desplazar la vista.</li>
+                      <li>Rueda del ratón o pellizco para hacer zoom.</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="question-box">
+                  <div class="question-box-title">💡 Ejemplos de expresiones válidas</div>
+                  <div class="question-box-content">
+                    <ul style="padding-left:16px;margin-top:6px;font-family:monospace;font-size:.82rem;display:flex;flex-direction:column;gap:4px;">
+                      <li><code>2*sen(x - v*t)</code></li>
+                      <li><code>2 / ((x - v*t)^4 + 1)</code></li>
+                      <li><code>A*cos(k*x - omega*t)</code></li>
+                      <li><code>exp(-0.5*(x-3*t)^2)</code></li>
+                      <li><code>sen(x)*cos(t)</code></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </aside>
+
+            <!-- Área del canvas -->
+            <div class="sim-canvas-area" id="main-canvas-area">
+              <div class="sim-canvas-container mode-pan" id="main-canvas-container">
+                <canvas id="wave-canvas" aria-label="Plano cartesiano de ondas" tabindex="0" style="min-height:400px"></canvas>
+                <!-- Inspector flotante -->
+                <div class="wave-inspector" id="wave-inspector-panel" aria-live="polite"></div>
+              </div>
+              <div class="sim-time-bar">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <span id="sim-time-value" class="sim-time-value">t = 0.000 s</span>
+                <span style="margin-left:auto;font-size:.74rem;color:#94a3b8">Rueda / Pellizco para zoom · Arrastrar para desplazar</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Botones de exportación -->
+          <div class="export-row">
+            <button id="btn-export-json" class="btn-export" aria-label="Exportar configuración como JSON">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Exportar JSON
+            </button>
+            <button id="btn-import-json" class="btn-export" aria-label="Importar configuración desde JSON">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+              Importar JSON
+            </button>
+            <button id="btn-export-img" class="btn-export" aria-label="Exportar gráfico como imagen PNG">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              Exportar imagen
+            </button>
+          </div>
+        </div>
+        <!-- FIN SIMULADOR -->
+
+        <div class="figure-wrapper">
+          <div class="figure-caption"><span class="figure-number">Figura 3:</span> Simulador interactivo de superposición de ondas con plano cartesiano estilo GeoGebra, cuadrícula milimetrada y animación a 60 FPS.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         PÁGINA 8: EJERCICIOS RESUELTOS
+         ══════════════════════════════════════════════════════════ -->
+    <section class="notebook-sheet is-content-page notebook-page" id="page-8" aria-label="Página 8: Ejercicios">
+      <div class="page-inner-content">
+        <header class="page-editorial-header">
+          <div>
+            <div class="page-category-tag"><span>📝</span> Aplicación Práctica</div>
+            <h1 class="page-title">Ejercicios Resueltos con Protocolo de Color</h1>
+            <p class="page-subtitle">Datos (azul) · Incógnitas (rojo) · Resultados (naranja) · Validación (verde)</p>
+          </div>
+          <div class="page-number-indicator">Página 8</div>
+        </header>
+
+        <div class="concept-card">
+          <h2 class="concept-card-title"><span>Ej. 1.</span> Velocidad de Propagación</h2>
+          <p>Una onda sonora en el aire tiene frecuencia $f = 440\,\text{Hz}$ y longitud de onda $\lambda = 78.2\,\text{cm}$. Calcule la velocidad de propagación.</p>
+          <div class="block-datos">
+            <span class="datos">Datos:</span> $f = 440\,\text{Hz}$, $\lambda = 0.782\,\text{m}$
+          </div>
+          <div class="block-incognitas">
+            <span class="incognita">Incógnita:</span> $v = ?$
+          </div>
+          <div class="block-resuelto">
+            <span class="resuelto">Solución:</span> $$v = \lambda \cdot f = (0.782\,\text{m})(440\,\text{Hz})$$
+            $$\boxed{v = 344.1\,\text{m/s}}$$
+          </div>
+          <div class="block-valido">
+            <span class="valido">Validación:</span> La velocidad del sonido en el aire a 20°C es $\approx 343\,\text{m/s}$. ✓
+          </div>
+        </div>
+
+        <div class="concept-card">
+          <h2 class="concept-card-title"><span>Ej. 2.</span> Superposición de dos ondas con diferencia de fase</h2>
+          <p>Dos ondas de la misma amplitud $A = 3\,\text{m}$ y frecuencia se superponen con diferencia de fase $\Delta\varphi = \pi/3$. Calcule la amplitud resultante.</p>
+          <div class="block-datos">
+            <span class="datos">Datos:</span> $A_1 = A_2 = 3\,\text{m}$, $\Delta\varphi = \pi/3 = 60°$
+          </div>
+          <div class="block-incognitas">
+            <span class="incognita">Incógnita:</span> $A_R = ?$
+          </div>
+          <div class="block-resuelto">
+            <span class="resuelto">Solución:</span>
+            $$A_R = 2A\cos\!\left(\frac{\Delta\varphi}{2}\right) = 2(3)\cos\!\left(\frac{\pi}{6}\right) = 6\cdot\frac{\sqrt{3}}{2}$$
+            $$\boxed{A_R = 3\sqrt{3} \approx 5.196\,\text{m}}$$
+          </div>
+          <div class="block-valido">
+            <span class="valido">Comprobación:</span> Como $0 < \Delta\varphi < \pi$, la amplitud debe estar entre $0$ y $2A = 6$. Se tiene $5.196 \in (0, 6)$. ✓
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         PÁGINA 9: GLOSARIO
+         ══════════════════════════════════════════════════════════ -->
+    <section class="notebook-sheet is-content-page notebook-page" id="page-9" aria-label="Página 9: Glosario">
+      <div class="page-inner-content">
+        <header class="page-editorial-header">
+          <div>
+            <div class="page-category-tag"><span>📖</span> Referencia Científica</div>
+            <h1 class="page-title">Glosario Científico Ilustrado</h1>
+            <p class="page-subtitle">Términos, símbolos, unidades SI y definiciones del Movimiento Ondulatorio</p>
+          </div>
+          <div class="page-number-indicator">Página 9</div>
+        </header>
+
+        <div class="glossary-search-box">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="search" id="glossary-search" class="glossary-search-input" placeholder="Buscar término…" aria-label="Buscar en el glosario">
+        </div>
+
+        <div class="glossary-grid" id="glossary-grid">
+          <!-- Generado por JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         PÁGINA 10: REFERENCIAS APA 7
+         ══════════════════════════════════════════════════════════ -->
+    <section class="notebook-sheet is-content-page notebook-page" id="page-10" aria-label="Página 10: Referencias">
+      <div class="page-inner-content">
+        <header class="page-editorial-header">
+          <div>
+            <div class="page-category-tag"><span>📚</span> Bibliografía Académica</div>
+            <h1 class="page-title">Referencias Bibliográficas</h1>
+            <p class="page-subtitle">Normas APA 7 — Física Ondulatoria y Recursos Universitarios</p>
+          </div>
+          <div class="page-number-indicator">Página 10</div>
+        </header>
+
+        <div class="apa-references-list">
+          <div class="apa-reference-item">
+            <p class="apa-citation-text">Serway, R. A., & Jewett, J. W. (2018). <em>Física para Ciencias e Ingeniería</em> (9.ª ed.). Cengage Learning. https://www.cengage.com</p>
+            <span class="apa-badge">Texto universitario principal</span>
+          </div>
+          <div class="apa-reference-item">
+            <p class="apa-citation-text">Halliday, D., Resnick, R., & Krane, K. S. (2014). <em>Física</em> (Vol. 2, 5.ª ed. en español). Compañía Editorial Continental.</p>
+            <span class="apa-badge">Referencia complementaria</span>
+          </div>
+          <div class="apa-reference-item">
+            <p class="apa-citation-text">French, A. P. (1971). <em>Vibrations and Waves</em>. W.W. Norton & Company. (MIT Introductory Physics Series)</p>
+            <span class="apa-badge">Texto clásico avanzado</span>
+          </div>
+          <div class="apa-reference-item">
+            <p class="apa-citation-text">Crawford, F. S. (1968). <em>Ondas</em> (Berkeley Physics Course, Vol. 3). Reverté.</p>
+            <span class="apa-badge">Curso Berkeley — Texto canónico</span>
+          </div>
+          <div class="apa-reference-item">
+            <p class="apa-citation-text">KaTeX (2024). <em>KaTeX — Fast Math Typesetting for the Web</em> (v0.16.9) [Software]. Khan Academy. https://katex.org</p>
+            <span class="apa-badge">Dependencia de software</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main><!-- fin notebook-viewport -->
+
+  <!-- ════════════════════════════════════════════════════════════
+       BARRA DE NAVEGACIÓN INFERIOR
+       ════════════════════════════════════════════════════════════ -->
+  <nav class="notebook-nav-bar" role="navigation" aria-label="Paginación del cuaderno">
+    <button id="btn-home-page" class="btn-nav" title="Ir a la Portada" aria-label="Ir a la portada">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    </button>
+    <button id="btn-prev-page" class="btn-nav" title="Página anterior" aria-label="Página anterior">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <select id="nav-page-select" class="nav-page-select" aria-label="Ir a página">
+      <option value="0">Portada</option>
+      <option value="1">Pág. 1 — Índice</option>
+      <option value="2">Pág. 2 — Mapa Mental</option>
+      <option value="3">Pág. 3 — Historia</option>
+      <option value="4">Pág. 4 — Conceptos</option>
+      <option value="5">Pág. 5 — Ecuación de Onda</option>
+      <option value="6">Pág. 6 — Superposición</option>
+      <option value="7">Pág. 7 — Simulador</option>
+      <option value="8">Pág. 8 — Ejercicios</option>
+      <option value="9">Pág. 9 — Glosario</option>
+      <option value="10">Pág. 10 — Referencias</option>
+    </select>
+    <span id="page-counter-badge" class="page-counter-badge">Portada</span>
+    <button id="btn-next-page" class="btn-nav" title="Página siguiente" aria-label="Página siguiente">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+  </nav>
+
+  <!-- ════════════════════════════════════════════════════════════
+       DRAWER DE ÍNDICE (TOC)
+       ════════════════════════════════════════════════════════════ -->
+  <nav class="toc-drawer" id="toc-drawer" aria-label="Índice de contenidos" aria-hidden="true">
+    <div class="toc-title">🌊 Movimiento Ondulatorio</div>
+    <button class="toc-item-btn" data-target-page="0"><span class="toc-item-num">0</span> Portada</button>
+    <button class="toc-item-btn" data-target-page="1"><span class="toc-item-num">1</span> Índice General</button>
+    <button class="toc-item-btn" data-target-page="2"><span class="toc-item-num">2</span> Mapa Mental</button>
+    <button class="toc-item-btn" data-target-page="3"><span class="toc-item-num">3</span> Historia</button>
+    <button class="toc-item-btn" data-target-page="4"><span class="toc-item-num">4</span> Conceptos y Definiciones</button>
+    <button class="toc-item-btn" data-target-page="5"><span class="toc-item-num">5</span> Ecuación de Onda</button>
+    <button class="toc-item-btn" data-target-page="6"><span class="toc-item-num">6</span> Principio de Superposición</button>
+    <button class="toc-item-btn" data-target-page="7"><span class="toc-item-num">7</span> Simulador Interactivo</button>
+    <button class="toc-item-btn" data-target-page="8"><span class="toc-item-num">8</span> Ejercicios Resueltos</button>
+    <button class="toc-item-btn" data-target-page="9"><span class="toc-item-num">9</span> Glosario</button>
+    <button class="toc-item-btn" data-target-page="10"><span class="toc-item-num">10</span> Referencias APA 7</button>
+    <button id="btn-close-toc" class="btn-close-toc">✕ Cerrar índice</button>
+  </nav>
+
+</div><!-- fin app-container -->
+
+<!-- ════════════════════════════════════════════════════════════
+     TECLADO VIRTUAL
+     ════════════════════════════════════════════════════════════ -->
+<div class="virtual-keyboard-overlay" id="vk-overlay" role="dialog" aria-modal="true" aria-label="Teclado virtual para ecuaciones de ondas">
+  <div class="virtual-keyboard" id="virtual-keyboard">
+
+    <div class="vk-header">
+      <div class="vk-title">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/><path d="M8 10h.01M12 10h.01M16 10h.01M8 14h8"/></svg>
+        Teclado Virtual — Ecuación de Onda
+      </div>
+      <button class="btn-vk-close" id="btn-vk-close" aria-label="Cerrar teclado">✕</button>
+    </div>
+
+    <!-- Display de la fórmula -->
+    <div class="vk-formula-display">
+      <span style="color:#64748b;font-size:.85rem;margin-right:8px">y(x,t) =</span>
+      <span class="vk-formula-text" id="vk-formula-text"></span>
+      <span class="vk-cursor"></span>
+    </div>
+
+    <!-- Vista previa de validación -->
+    <div class="vk-preview" id="vk-preview" aria-live="polite">Escribe una expresión…</div>
+
+    <div class="vk-body">
+
+      <!-- Números y operaciones básicas -->
+      <div class="vk-section">
+        <div class="vk-section-title">Números y Operaciones</div>
+        <div class="vk-row">
+          <button class="btn-vk" data-insert="7">7</button>
+          <button class="btn-vk" data-insert="8">8</button>
+          <button class="btn-vk" data-insert="9">9</button>
+          <button class="btn-vk is-op" data-insert="/">/</button>
+          <button class="btn-vk is-op" data-insert="**2">x²</button>
+          <button class="btn-vk is-op" data-insert="**3">x³</button>
+          <button class="btn-vk is-op" data-insert="**">^</button>
+          <button class="btn-vk" data-insert="(" >(</button>
+          <button class="btn-vk" data-insert=")">)</button>
+          <button class="btn-vk is-backspace" id="btn-vk-backspace" aria-label="Borrar último carácter">⌫</button>
+        </div>
+        <div class="vk-row">
+          <button class="btn-vk" data-insert="4">4</button>
+          <button class="btn-vk" data-insert="5">5</button>
+          <button class="btn-vk" data-insert="6">6</button>
+          <button class="btn-vk is-op" data-insert="*">×</button>
+          <button class="btn-vk is-op" data-insert="-">−</button>
+          <button class="btn-vk is-op" data-insert="+">+</button>
+          <button class="btn-vk is-op" data-insert="|">|</button>
+          <button class="btn-vk" data-insert=",">,</button>
+          <button class="btn-vk" data-insert=".">.</button>
+          <button class="btn-vk is-op" data-insert=" "> </button>
+        </div>
+        <div class="vk-row">
+          <button class="btn-vk" data-insert="1">1</button>
+          <button class="btn-vk" data-insert="2">2</button>
+          <button class="btn-vk" data-insert="3">3</button>
+          <button class="btn-vk" data-insert="0">0</button>
+          <button class="btn-vk is-op" data-insert="-1">−1</button>
+          <button class="btn-vk is-op" data-insert="0.5">½</button>
+          <button class="btn-vk is-op" data-insert="2*">2·</button>
+          <button class="btn-vk is-op is-wide" data-insert="1/">1/</button>
+        </div>
+      </div>
+
+      <!-- Variables físicas -->
+      <div class="vk-section">
+        <div class="vk-section-title">Variables</div>
+        <div class="vk-row">
+          <button class="btn-vk is-special" data-insert="x">x</button>
+          <button class="btn-vk is-special" data-insert="t">t</button>
+          <button class="btn-vk is-special" data-insert="v">v</button>
+          <button class="btn-vk is-special" data-insert="A">A</button>
+          <button class="btn-vk is-special" data-insert="k">k</button>
+          <button class="btn-vk is-special" data-insert="omega">ω</button>
+          <button class="btn-vk is-special" data-insert="n">n</button>
+          <button class="btn-vk is-special" data-insert="m">m</button>
+          <button class="btn-vk is-special is-wide" data-insert="(x - v*t)">(x − vt)</button>
+          <button class="btn-vk is-special is-wide" data-insert="(x + v*t)">(x + vt)</button>
+        </div>
+      </div>
+
+      <!-- Funciones trigonométricas -->
+      <div class="vk-section">
+        <div class="vk-section-title">Funciones Trigonométricas</div>
+        <div class="vk-row">
+          <button class="btn-vk is-func" data-insert="sen(">sen(</button>
+          <button class="btn-vk is-func" data-insert="cos(">cos(</button>
+          <button class="btn-vk is-func" data-insert="tan(">tan(</button>
+          <button class="btn-vk is-func" data-insert="asen(">asen(</button>
+          <button class="btn-vk is-func" data-insert="acos(">acos(</button>
+          <button class="btn-vk is-func" data-insert="atan(">atan(</button>
+          <button class="btn-vk is-func" data-insert="atan2(">atan2(</button>
+        </div>
+        <div class="vk-row">
+          <button class="btn-vk is-func" data-insert="sinh(">sinh(</button>
+          <button class="btn-vk is-func" data-insert="cosh(">cosh(</button>
+          <button class="btn-vk is-func" data-insert="tanh(">tanh(</button>
+        </div>
+      </div>
+
+      <!-- Funciones matemáticas -->
+      <div class="vk-section">
+        <div class="vk-section-title">Funciones Matemáticas</div>
+        <div class="vk-row">
+          <button class="btn-vk is-func" data-insert="sqrt(">√(</button>
+          <button class="btn-vk is-func" data-insert="abs(">|x|</button>
+          <button class="btn-vk is-func" data-insert="exp(">eˣ</button>
+          <button class="btn-vk is-func" data-insert="log(">ln(</button>
+          <button class="btn-vk is-func" data-insert="log10(">log₁₀(</button>
+          <button class="btn-vk is-func" data-insert="sign(">sgn(</button>
+          <button class="btn-vk is-func" data-insert="floor(">⌊x⌋</button>
+          <button class="btn-vk is-func" data-insert="ceil(">⌈x⌉</button>
+          <button class="btn-vk is-func" data-insert="round(">round(</button>
+          <button class="btn-vk is-func" data-insert="pow(">pow(</button>
+        </div>
+      </div>
+
+      <!-- Constantes y letras griegas -->
+      <div class="vk-section">
+        <div class="vk-section-title">Constantes y Letras Griegas</div>
+        <div class="vk-row">
+          <button class="btn-vk is-greek" data-insert="pi">π</button>
+          <button class="btn-vk is-greek" data-insert="2*pi">2π</button>
+          <button class="btn-vk is-greek" data-insert="pi/2">π/2</button>
+          <button class="btn-vk is-greek" data-insert="pi/4">π/4</button>
+          <button class="btn-vk is-greek" data-insert="e">e</button>
+          <button class="btn-vk is-greek" data-insert="lambda">λ</button>
+          <button class="btn-vk is-greek" data-insert="omega">ω</button>
+          <button class="btn-vk is-greek" data-insert="phi">φ</button>
+          <button class="btn-vk is-greek" data-insert="alpha">α</button>
+          <button class="btn-vk is-greek" data-insert="beta">β</button>
+          <button class="btn-vk is-greek" data-insert="delta">δ</button>
+          <button class="btn-vk is-greek" data-insert="mu">μ</button>
+        </div>
+      </div>
+
+      <!-- Plantillas de ondas -->
+      <div class="vk-section">
+        <div class="vk-section-title">Plantillas Rápidas</div>
+        <div class="vk-row">
+          <button class="btn-vk is-func is-extra-wide" data-insert="2*sen(x - v*t)">2·sen(x−vt)</button>
+          <button class="btn-vk is-func is-extra-wide" data-insert="2*cos(x - v*t)">2·cos(x−vt)</button>
+          <button class="btn-vk is-func is-extra-wide" data-insert="A*sen(k*x - omega*t)">A·sen(kx−ωt)</button>
+          <button class="btn-vk is-func is-extra-wide" data-insert="A*sen(k*x - omega*t + phi)">A·sen(kx−ωt+φ)</button>
+        </div>
+        <div class="vk-row">
+          <button class="btn-vk is-func is-extra-wide" data-insert="1 / ((x - v*t)**4 + 1)">Pulso: 1/(u⁴+1)</button>
+          <button class="btn-vk is-func is-extra-wide" data-insert="exp(-0.5*(x - v*t)**2)">Gaussiana e^(-u²/2)</button>
+          <button class="btn-vk is-func is-extra-wide" data-insert="sen(x)*cos(t)">sen(x)·cos(t)</button>
+          <button class="btn-vk is-func is-extra-wide" data-insert="2*sen(k*x)*cos(omega*t)">2·sen(kx)·cos(ωt)</button>
+        </div>
+      </div>
+
+      <!-- Botones de acción -->
+      <div class="vk-row" style="margin-top:8px;">
+        <button class="btn-vk is-special is-wide" id="btn-vk-clear" aria-label="Limpiar expresión">🗑 Limpiar</button>
+      </div>
+
+    </div><!-- fin vk-body -->
+
+    <div class="vk-footer">
+      <label for="vk-name-input" style="font-size:.78rem;font-weight:700;color:#64748b;white-space:nowrap">Nombre:</label>
+      <input type="text" id="vk-name-input" class="vk-wave-name-input" placeholder="Nombre de la onda" maxlength="30" aria-label="Nombre de la onda">
+      <button class="btn-vk-confirm" id="btn-vk-confirm" aria-label="Confirmar y guardar onda">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        Guardar onda
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════
+     PALETA DE ESTILOS
+     ════════════════════════════════════════════════════════════ -->
+<div class="palette-overlay" id="palette-overlay" role="dialog" aria-modal="true" aria-label="Paleta de estilos gráficos">
+  <div class="palette-panel">
+    <div class="palette-header">
+      <div class="palette-title">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="13.5" cy="6.5" r=".5" fill="white"/><circle cx="17.5" cy="10.5" r=".5" fill="white"/><circle cx="8.5" cy="7.5" r=".5" fill="white"/><circle cx="6.5" cy="12.5" r=".5" fill="white"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
+        Paleta de Estilos Gráficos
+      </div>
+      <button class="btn-palette-close" id="btn-palette-close" aria-label="Cerrar paleta">✕</button>
+    </div>
+
+    <div class="palette-body">
+
+      <!-- Tema -->
+      <div class="palette-section">
+        <div class="palette-section-title">Tema del Gráfico</div>
+        <div class="palette-row">
+          <button class="btn-palette-theme light-theme is-active" data-theme="light" aria-pressed="true">☀️ Claro</button>
+          <button class="btn-palette-theme dark-theme" data-theme="dark" aria-pressed="false">🌙 Oscuro</button>
+        </div>
+      </div>
+
+      <!-- Fondo -->
+      <div class="palette-section">
+        <div class="palette-section-title">Fondo del Gráfico</div>
+        <div class="palette-row">
+          <span class="palette-label">Color de fondo:</span>
+          <input type="color" id="pal-bg-color" class="palette-color-input" value="#ffffff" aria-label="Color de fondo del gráfico">
+        </div>
+      </div>
+
+      <!-- Cuadrícula mayor -->
+      <div class="palette-section">
+        <div class="palette-section-title">Cuadrícula Mayor</div>
+        <div class="palette-row">
+          <span class="palette-label">Color:</span>
+          <input type="color" id="pal-grid-major-color" class="palette-color-input" value="#e2e8f0" aria-label="Color de cuadrícula mayor">
+          <span class="palette-label" style="margin-left:12px">Grosor:</span>
+          <input type="range" id="pal-grid-major-width" class="palette-range" min="0.5" max="3" step="0.1" value="1">
+          <span id="pal-grid-major-width-val" class="palette-range-value">1</span>
+        </div>
+      </div>
+
+      <!-- Cuadrícula menor -->
+      <div class="palette-section">
+        <div class="palette-section-title">Cuadrícula Menor (Milimetrado)</div>
+        <div class="palette-row">
+          <span class="palette-label">Color:</span>
+          <input type="color" id="pal-grid-minor-color" class="palette-color-input" value="#f1f5f9" aria-label="Color de cuadrícula menor">
+          <span class="palette-label" style="margin-left:12px">Grosor:</span>
+          <input type="range" id="pal-grid-minor-width" class="palette-range" min="0.2" max="2" step="0.1" value="0.5">
+          <span id="pal-grid-minor-width-val" class="palette-range-value">0.5</span>
+        </div>
+      </div>
+
+      <!-- Ejes -->
+      <div class="palette-section">
+        <div class="palette-section-title">Ejes Cartesianos</div>
+        <div class="palette-row">
+          <span class="palette-label">Color:</span>
+          <input type="color" id="pal-axis-color" class="palette-color-input" value="#1e293b" aria-label="Color de ejes">
+          <span class="palette-label" style="margin-left:12px">Grosor:</span>
+          <input type="range" id="pal-axis-width" class="palette-range" min="0.5" max="4" step="0.1" value="1.5">
+          <span id="pal-axis-width-val" class="palette-range-value">1.5</span>
+        </div>
+      </div>
+
+      <!-- Tamaño de etiquetas -->
+      <div class="palette-section">
+        <div class="palette-section-title">Etiquetas y Números</div>
+        <div class="palette-row">
+          <span class="palette-label">Tamaño:</span>
+          <input type="range" id="pal-label-size" class="palette-range" min="8" max="18" step="1" value="11">
+          <span id="pal-label-size-val" class="palette-range-value">11</span>
+          <span style="font-size:.75rem;color:#64748b;margin-left:4px">px</span>
+        </div>
+      </div>
+
+      <!-- Estilo de una onda -->
+      <div class="palette-section">
+        <div class="palette-section-title">Estilo de Onda Componente</div>
+        <div class="palette-row">
+          <span class="palette-label">Onda:</span>
+          <select id="pal-wave-select" class="palette-wave-select" aria-label="Seleccionar onda para editar estilo"></select>
+        </div>
+        <div class="palette-row">
+          <span class="palette-label">Color:</span>
+          <input type="color" id="pal-wave-color" class="palette-color-input" value="#2563eb" aria-label="Color de la onda">
+          <span class="palette-label" style="margin-left:12px">Grosor:</span>
+          <input type="range" id="pal-wave-width" class="palette-range" min="0.5" max="8" step="0.5" value="2.5">
+          <span id="pal-wave-width-val" class="palette-range-value">2.5</span>
+        </div>
+        <div class="palette-row">
+          <span class="palette-label">Opacidad:</span>
+          <input type="range" id="pal-wave-opacity" class="palette-range" min="0.1" max="1" step="0.05" value="1">
+          <span id="pal-wave-opacity-val" class="palette-range-value">1</span>
+          <span class="palette-label" style="margin-left:12px">Patrón:</span>
+          <select id="pal-wave-dash" class="palette-select" aria-label="Patrón de línea">
+            <option value="solid">Continua</option>
+            <option value="dashed">Discontinua</option>
+            <option value="dotted">Punteada</option>
+            <option value="dashdot">Guión-punto</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Resultante -->
+      <div class="palette-section">
+        <div class="palette-section-title">Estilo de la Onda Resultante</div>
+        <div class="palette-row">
+          <span class="palette-label">Color:</span>
+          <input type="color" id="pal-res-color" class="palette-color-input" value="#f59e0b" aria-label="Color de la resultante">
+          <span class="palette-label" style="margin-left:12px">Grosor:</span>
+          <input type="range" id="pal-res-width" class="palette-range" min="0.5" max="8" step="0.5" value="3">
+          <span id="pal-res-width-val" class="palette-range-value">3</span>
+        </div>
+        <div class="palette-row">
+          <span class="palette-label">Opacidad:</span>
+          <input type="range" id="pal-res-opacity" class="palette-range" min="0.1" max="1" step="0.05" value="1">
+          <span id="pal-res-opacity-val" class="palette-range-value">1</span>
+          <span class="palette-label" style="margin-left:12px">Patrón:</span>
+          <select id="pal-res-dash" class="palette-select" aria-label="Patrón de la resultante">
+            <option value="solid">Continua</option>
+            <option value="dashed">Discontinua</option>
+            <option value="dotted">Punteada</option>
+            <option value="dashdot">Guión-punto</option>
+          </select>
+        </div>
+      </div>
+
+    </div><!-- fin palette-body -->
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════
+     MODAL AMPLIADA
+     ════════════════════════════════════════════════════════════ -->
+<div class="wave-modal-overlay" id="wave-modal-overlay" role="dialog" aria-modal="true" aria-label="Vista ampliada del simulador de ondas">
+  <div class="wave-modal" id="wave-modal">
+
+    <!-- Cabecera del modal -->
+    <div class="wave-modal-header">
+      <div class="modal-title-area">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        Simulador de Ondas — Vista Ampliada
+      </div>
+      <div class="modal-window-controls">
+        <!-- Barra de herramientas del modal -->
+        <button id="modal-btn-pan" class="btn-modal-ctrl" title="Modo arrastrar" aria-label="Arrastrar">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 9l-3 3 3 3M9 5l3-3 3 3M15 19l-3 3-3-3M19 9l3 3-3 3M2 12h20M12 2v20"/></svg>
+        </button>
+        <button id="modal-btn-inspect" class="btn-modal-ctrl" title="Inspector" aria-label="Inspector">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <button id="modal-btn-zoomin" class="btn-modal-ctrl" title="Acercar" aria-label="Acercar">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+        </button>
+        <button id="modal-btn-zoomout" class="btn-modal-ctrl" title="Alejar" aria-label="Alejar">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+        </button>
+        <button id="modal-btn-reset-view" class="btn-modal-ctrl" title="Restablecer vista" aria-label="Restablecer">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+        </button>
+        <button id="modal-btn-lambda" class="btn-modal-ctrl is-active" title="Visualizar cota de longitud de onda (λ)" aria-label="Ver lambda" style="color:#6ee7b7;font-weight:700">📏 λ</button>
+        <div style="width:1px;height:20px;background:rgba(255,255,255,.2);margin:0 2px"></div>
+        <button id="btn-modal-minimize" class="btn-modal-ctrl" title="Minimizar/Restaurar cuerpo" aria-label="Minimizar">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <button id="btn-modal-maximize" class="btn-modal-ctrl" title="Maximizar/Restaurar ventana" aria-label="Maximizar">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="1"/></svg>
+        </button>
+        <button id="btn-modal-fullscreen" class="btn-modal-ctrl" title="Pantalla completa" aria-label="Pantalla completa">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+        </button>
+        <button id="btn-modal-close" class="btn-modal-ctrl" title="Cerrar modal (Escape)" aria-label="Cerrar" style="background:rgba(220,38,38,.3);border-color:rgba(220,38,38,.5)">✕</button>
+      </div>
+    </div>
+
+    <!-- Cuerpo del modal -->
+    <div class="wave-modal-body">
+
+      <!-- Panel lateral del modal -->
+      <div class="modal-side-panel">
+        <div class="sim-panel-body" style="display:flex;flex-direction:column;gap:8px;padding:12px;">
+          <div style="font-size:.78rem;font-weight:800;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px">Ondas activas</div>
+          <div id="modal-wave-list" style="font-size:.82rem;color:#334155">
+            <!-- Sincronizado por JS -->
+            <p style="color:#94a3b8;font-size:.8rem">Las ondas se sincronizan automáticamente con el panel principal.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Canvas del modal -->
+      <div class="modal-canvas-area">
+        <div class="sim-canvas-container mode-pan" style="flex:1;min-height:300px">
+          <canvas id="wave-canvas-modal" aria-label="Plano cartesiano ampliado" tabindex="0"></canvas>
+          <div class="wave-inspector" id="modal-inspector-panel" aria-live="polite"></div>
+        </div>
+        <div class="sim-time-bar">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span id="modal-time-value" class="sim-time-value">t = 0.000 s</span>
+          <span style="margin-left:auto;font-size:.74rem;color:#94a3b8">Sincronizado con la vista principal</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════
+     SCRIPTS
+     ════════════════════════════════════════════════════════════ -->
+<script src="js/wave-engine.js"></script>
+<script src="js/wave-canvas.js"></script>
+<script src="js/wave-ui.js"></script>
+
+<script>
+// ──────────────────────────────────────────────────────────────
+// SISTEMA DE PÁGINAS (SPA)
+// ──────────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  const TOTAL_PAGES = 11;
+  let currentPage = 0;
+  let simulatorInitialized = false;
+
+  const pageElements = document.querySelectorAll('.notebook-page');
+  const pageSelect   = document.getElementById('nav-page-select');
+  const pageBadge    = document.getElementById('page-counter-badge');
+  const btnPrev      = document.getElementById('btn-prev-page');
+  const btnNext      = document.getElementById('btn-next-page');
+  const btnHome      = document.getElementById('btn-home-page');
+  const btnOpen      = document.getElementById('btn-open-notebook');
+  const btnToggleToc = document.getElementById('btn-toggle-toc');
+  const btnCloseToc  = document.getElementById('btn-close-toc');
+  const tocDrawer    = document.getElementById('toc-drawer');
+  const tocBtns      = document.querySelectorAll('.toc-item-btn');
+
+  function showPage(idx) {
+    if (idx < 0 || idx >= TOTAL_PAGES) return;
+    currentPage = idx;
+
+    pageElements.forEach((el, i) => {
+      if (i === idx) {
+        el.style.display = 'flex';
+        el.classList.add('page-fade-enter');
+      } else {
+        el.style.display = 'none';
+        el.classList.remove('page-fade-enter');
+      }
+    });
+
+    if (pageSelect) pageSelect.value = idx;
+    if (pageBadge) pageBadge.textContent = idx === 0 ? 'Portada' : `Pág. ${idx} / ${TOTAL_PAGES - 1}`;
+    if (btnPrev) btnPrev.disabled = (idx === 0);
+    if (btnNext) btnNext.disabled = (idx === TOTAL_PAGES - 1);
+
+    tocBtns.forEach(b => b.classList.toggle('is-active', parseInt(b.dataset.targetPage) === idx));
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // Inicializar KaTeX
+    if (window.renderMathInElement) {
+      try {
+        window.renderMathInElement(pageElements[idx], {
+          delimiters: [
+            { left: '$$', right: '$$', display: true },
+            { left: '$', right: '$', display: false }
+          ],
+          throwOnError: false
+        });
+      } catch(e) { /* silencioso */ }
+    }
+
+    // Inicializar el simulador la primera vez que se llega a la página 7
+    if (idx === 7 && !simulatorInitialized) {
+      simulatorInitialized = true;
+      setTimeout(() => {
+        initWaveSimulator();
+        // Glosario
+        _initGlossary();
+      }, 100);
+    } else if (idx === 7 && simulatorInitialized) {
+      // Redimensionar canvas
+      setTimeout(() => {
+        if (waveUI) { waveUI.mainCanvas.resize(); }
+      }, 50);
+    }
+
+    // Inicializar glosario en página 9
+    if (idx === 9) _initGlossary();
+  }
+
+  // ── Glosario ────────────────────────────────────────────────
+  const GLOSSARY = [
+    { term: 'Onda',         symbol: 'y(x,t)', unit: '—',     def: 'Perturbación que se propaga en el espacio y el tiempo transportando energía sin transporte neto de materia.' },
+    { term: 'Amplitud',     symbol: 'A',       unit: 'm',     def: 'Valor máximo del desplazamiento de la onda respecto a la posición de equilibrio.' },
+    { term: 'Longitud de onda', symbol: 'λ',  unit: 'm',     def: 'Distancia espacial entre dos puntos consecutivos con igual fase, p.ej. entre dos crestas.' },
+    { term: 'Frecuencia',   symbol: 'f',       unit: 'Hz',    def: 'Número de ciclos completos que la onda realiza por segundo. $f = 1/T$.' },
+    { term: 'Período',      symbol: 'T',       unit: 's',     def: 'Tiempo que tarda la onda en completar un ciclo completo. $T = 1/f$.' },
+    { term: 'Número de onda', symbol: 'k',    unit: 'rad/m', def: 'Cantidad $k = 2\\pi/\\lambda$. Representa cuántos ciclos caben en $2\\pi$ metros.' },
+    { term: 'Frecuencia angular', symbol: 'ω', unit: 'rad/s', def: 'Cantidad $\\omega = 2\\pi f$. Tasa de cambio de la fase en el tiempo.' },
+    { term: 'Velocidad de fase', symbol: 'v', unit: 'm/s',   def: 'Velocidad a la que se propaga la fase de la onda: $v = \\omega/k = \\lambda f$.' },
+    { term: 'Superposición', symbol: '∑yᵢ',   unit: 'm',     def: 'Principio que establece que la perturbación total es la suma de las perturbaciones individuales.' },
+    { term: 'Interferencia', symbol: '—',      unit: '—',     def: 'Fenómeno resultante de la superposición de dos o más ondas que produce regiones de amplitud máxima (constructiva) o nula (destructiva).' },
+    { term: 'Batido',       symbol: 'fₜ',      unit: 'Hz',    def: 'Variación periódica de amplitud producida al superponer dos ondas de frecuencias muy próximas. $f_{bat} = |f_1 - f_2|$.' },
+    { term: 'Onda estacionaria', symbol: '—',  unit: '—',     def: 'Patrón de onda que no se propaga espacialmente, formado por dos ondas idénticas que viajan en sentidos opuestos. Presenta nodos y antinodos fijos.' },
+    { term: 'Nodo',         symbol: '—',       unit: '—',     def: 'Punto de una onda estacionaria donde la amplitud siempre es cero.' },
+    { term: 'Antinodo',     symbol: '—',       unit: '—',     def: 'Punto de una onda estacionaria donde la amplitud es máxima.' },
+    { term: 'Ecuación de onda', symbol: '∂²y/∂t²=v²∂²y/∂x²', unit: '—', def: 'Ecuación diferencial en derivadas parciales que rige la propagación de ondas lineales.' },
+    { term: 'Principio de Huygens', symbol: '—', unit: '—',  def: 'Cada punto de un frente de onda actúa como fuente de ondas secundarias esféricas. El nuevo frente es la envolvente de estas ondas.' },
+  ];
+
+  function _initGlossary() {
+    const grid = document.getElementById('glossary-grid');
+    const search = document.getElementById('glossary-search');
+    if (!grid) return;
+    _renderGlossary('');
+    search?.addEventListener('input', () => _renderGlossary(search.value));
+  }
+
+  function _renderGlossary(query) {
+    const grid = document.getElementById('glossary-grid');
+    if (!grid) return;
+    const q = query.toLowerCase().trim();
+    const items = q ? GLOSSARY.filter(g => g.term.toLowerCase().includes(q) || g.def.toLowerCase().includes(q)) : GLOSSARY;
+    grid.innerHTML = items.map(g => `
+      <div class="glossary-card">
+        <div class="glossary-term-header">
+          <span class="glossary-term">${g.term}</span>
+          <span class="glossary-symbol">${g.symbol}</span>
+        </div>
+        <div class="glossary-definition">${g.def}</div>
+        <div class="glossary-unit">Unidad SI: <strong>${g.unit}</strong></div>
+      </div>`).join('');
+    if (window.renderMathInElement) {
+      try { window.renderMathInElement(grid, { delimiters: [{ left: '$', right: '$', display: false }], throwOnError: false }); } catch(e) {}
+    }
+  }
+
+  // ── Navegación ───────────────────────────────────────────────
+  btnOpen?.addEventListener('click', () => showPage(1));
+  btnPrev?.addEventListener('click', () => showPage(currentPage - 1));
+  btnNext?.addEventListener('click', () => showPage(currentPage + 1));
+  btnHome?.addEventListener('click', () => showPage(0));
+  pageSelect?.addEventListener('change', () => showPage(parseInt(pageSelect.value)));
+  tocBtns.forEach(b => b.addEventListener('click', () => {
+    showPage(parseInt(b.dataset.targetPage));
+    tocDrawer?.classList.remove('is-open');
+    btnToggleToc?.setAttribute('aria-expanded', 'false');
+    tocDrawer?.setAttribute('aria-hidden', 'true');
+  }));
+
+  btnToggleToc?.addEventListener('click', () => {
+    const open = tocDrawer?.classList.toggle('is-open');
+    btnToggleToc.setAttribute('aria-expanded', open ? 'true' : 'false');
+    tocDrawer?.setAttribute('aria-hidden', open ? 'false' : 'true');
+  });
+  btnCloseToc?.addEventListener('click', () => {
+    tocDrawer?.classList.remove('is-open');
+    btnToggleToc?.setAttribute('aria-expanded', 'false');
+    tocDrawer?.setAttribute('aria-hidden', 'true');
+  });
+
+  // Navegación por teclado (flechas)
+  document.addEventListener('keydown', e => {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'SELECT') return;
+    if (document.getElementById('vk-overlay')?.classList.contains('is-open')) return;
+    if (e.key === 'ArrowRight' || e.key === 'PageDown') showPage(currentPage + 1);
+    if (e.key === 'ArrowLeft'  || e.key === 'PageUp')   showPage(currentPage - 1);
+    if (e.key === 'Home') showPage(0);
+    if (e.key === 'End')  showPage(TOTAL_PAGES - 1);
+  });
+
+  // Pantalla completa
+  document.getElementById('btn-fullscreen')?.addEventListener('click', () => {
+    if (!document.fullscreenElement) document.documentElement.requestFullscreen?.();
+    else document.exitFullscreen?.();
+  });
+
+  // Mostrar portada al inicio
+  showPage(0);
+
+  // KaTeX en body
+  document.addEventListener('katex_ready', () => {
+    if (window.renderMathInElement) {
+      window.renderMathInElement(document.body, {
+        delimiters: [
+          { left: '$$', right: '$$', display: true },
+          { left: '$', right: '$', display: false }
+        ],
+        throwOnError: false
+      });
+    }
+  });
+});
+
+// ── Sincronizar tiempo de modal ────────────────────────────────
+setInterval(() => {
+  if (waveUI?.engine) {
+    const t = waveUI.engine.time;
+    const el = document.getElementById('modal-time-value');
+    if (el) el.textContent = `t = ${t.toFixed(3)} s`;
+  }
+}, 50);
+</script>
+</body>
+</html>
