@@ -25,9 +25,10 @@
 - [Integrantes del Proyecto](#-integrantes-del-proyecto)
 - [Sobre el Proyecto](#-sobre-el-proyecto)
 - [Características Principales](#-características-principales)
-- [Estructura del Cuaderno (11 Páginas)](#-estructura-del-cuaderno)
+- [Estructura del Cuaderno (12 Páginas)](#-estructura-del-cuaderno)
 - [Laboratorio Virtual & Simulador de Ondas](#-laboratorio-virtual--simulador-de-ondas)
   - [Simulación en Centímetros y Segundos con Medición de $\lambda$](#-simulación-en-centímetros-y-segundos-con-medición-de-lambda)
+  - [Módulo Interactivo de Onda Armónica Simple](#-módulo-interactivo-de-onda-armónica-simple)
   - [Paleta de Estilos Gráficos (Requisito 6)](#-paleta-de-estilos-gráficos-requisito-6)
   - [Ventana Modal Ampliada (Requisito 7)](#-ventana-modal-ampliada-requisito-7)
   - [Teclado Virtual de Ecuaciones](#-teclado-virtual-de-ecuaciones)
@@ -45,7 +46,7 @@
 
 El presente proyecto constituye una **obra interactiva de ingeniería didáctica y desarrollo pedagógico** elaborado para la asignatura de **Física 3** en la **Universidad Tecnológica de Pereira (UTP)** (Facultad de Ingenierías).
 
-Tras la culminación del primer volumen dedicado al *Movimiento Oscilatorio y M.A.S.*, este segundo libro virtual aborda de forma profunda y analítica el **Movimiento Ondulatorio**: la propagación espaciotemporal de perturbaciones, la energía y potencia transmitida por ondas mecánicas, la solución analítica de la ecuación diferencial en derivadas parciales (EDP) de onda, y el trascendental **Principio de Superposición Lineal**, el cual rige fenómenos de interferencia, batidos acústicos y la formación de modos estacionarios resonantes.
+Tras la culminación del primer volumen dedicado al *Movimiento Oscilatorio y M.A.S.*, este segundo libro virtual aborda de forma profunda y analítica el **Movimiento Ondulatorio**: la propagación espaciotemporal de perturbaciones, el estudio exhaustivo de la **Onda Armónica Simple (O.A.S.)**, la energía y potencia transmitida por ondas mecánicas, la solución analítica de la ecuación diferencial en derivadas parciales (EDP) de onda, y el trascendental **Principio de Superposición Lineal**, el cual rige fenómenos de interferencia, batidos acústicos y la formación de modos estacionarios resonantes.
 
 ---
 
@@ -68,12 +69,13 @@ Este trabajo fue diseñado, programado y documentado en su totalidad por los est
 El **Cuaderno Interactivo de Física 3: Movimiento Ondulatorio** está concebido como una Single Page Application (SPA) con diseño editorial anillado de alta categoría estética. 
 
 Integra en una experiencia interactiva fluida:
-1. **Deducciones matemáticas analíticas rigurosas** de la ecuación de onda clásica de d'Alembert.
+1. **Deducciones matemáticas analíticas rigurosas** de la ecuación de onda clásica de d'Alembert y cinemática de la onda armónica simple.
 2. **Protocolo pedagógico estricto de color** para la resolución de ejercicios numéricos (azul = datos, rojo = incógnitas, naranja = solución, verde = verificación dimensional y física).
 3. **Simulador de ondas 2D continuo a 60 FPS**, implementado en HTML5 Canvas con soporte para pantallas Retina / 4K (`window.devicePixelRatio`).
-4. **Plano cartesiano interactivo estilo "GeoGebra"** con cuadrícula mayor, menor (papel milimetrado), reglas con subdivisiones en los ejes, arrastre (pan), zoom adaptativo centrado en cursor, e inspector puntual $x$.
-5. **Evaluador seguro de funciones matemáticas arbitrarias** con variables $x, t, v$, constantes $\pi, e$ y funciones trascendentes.
-6. **Medición interactiva en pantalla de la longitud de onda ($\lambda$)**, distancias en centímetros ($\text{cm}$) y tiempo en segundos ($\text{s}$).
+4. **Laboratorio de Onda Armónica Simple** con doble visualización interactiva: perfil espacial instantáneo $y(x)$ con cotas y vectores de velocidad transversal $\vec{v}_y$, y registro temporal de partícula $y(t), v_y(t), a_y(t)$ con cota de período $T$.
+5. **Plano cartesiano interactivo estilo "GeoGebra"** con cuadrícula mayor, menor (papel milimetrado), reglas con subdivisiones en los ejes, arrastre (pan), zoom adaptativo centrado en cursor, e inspector puntual $x$.
+6. **Evaluador seguro de funciones matemáticas arbitrarias** con variables $x, t, v$, constantes $\pi, e$ y funciones trascendentes.
+7. **Medición interactiva en pantalla de la longitud de onda ($\lambda$)**, distancias en centímetros ($\text{cm}$) y tiempo en segundos ($\text{s}$).
 
 > [!NOTE]
 > Todas las fórmulas matemáticas del cuaderno y del simulador están tipografiadas con **KaTeX**, garantizando un renderizado vectorial ultrarrápido y nítido de ecuaciones en derivadas parciales, integrales, matrices y notación científica.
@@ -92,6 +94,13 @@ Integra en una experiencia interactiva fluida:
   - Detección analítica y numérica de crestas y nodos consecutivos.
   - Cota gráfica con líneas de referencia verticales discontinuas, barra horizontal con flechas bidireccionales ($\longleftrightarrow$) y badge numérico `λ = X.XX cm`.
   - Pestaña de control físico con deslizadores directos para Amplitud ($A$), Longitud de onda ($\lambda$), Frecuencia ($f$), Período ($T$), Velocidad ($v$), Número de onda ($k$) y Frecuencia angular ($\omega$).
+- 🌊 **Estudio Completo de Onda Armónica Simple (Pág. 5):**
+  - Formulación canónica y 5 formas equivalentes.
+  - Análisis cinemático de partículas: elongación $y$, velocidad $v_y = \partial y/\partial t$, aceleración $a_y = -\omega^2 y$ (M.A.S.).
+  - Distinción física entre velocidad de onda $v$ y velocidad de partícula $v_y$.
+  - Vectores de velocidad transversal $\vec{v}_y$ renderizados dinámicamente en pantalla.
+  - Registro temporal $y(t), v_y(t), a_y(t)$ con cota de período $T$ y visualización de desfases ($0, \pi/2, \pi$).
+  - Densidad de energía $\langle u \rangle$ y potencia media transmitida $\bar{P} \propto A^2 f^2$.
 - 🎨 **Paleta de Estilos Integral (Requisito 6):**
   - Temas globales: **Claro** y **Oscuro** con óptimo contraste.
   - Selector de color de fondo del gráfico.
@@ -124,30 +133,36 @@ Integra en una experiencia interactiva fluida:
 
 ## 📑 Estructura del Cuaderno
 
-El cuaderno interactivo consta de una portada oficial y 10 páginas de contenido riguroso:
+El cuaderno interactivo consta de una portada oficial y 11 páginas de contenido riguroso (12 vistas en total):
 
 | Pág. | Módulo Temático | Descripción y Recursos Clave |
 | :---: | :--- | :--- |
-| **0** | **Portada Oficial UTP** | Portada institucional [`portada_fisica3_ondas_cuaderno.png`](file:///c:/Users/santi/OneDrive/Desktop/Física%203/Movimiento%20Ondulatorio/Imagenes/portada_fisica3_ondas_cuaderno.png) con botón de apertura interactivo. |
+| **0** | **Portada Oficial UTP** | Portada institucional con botón de apertura interactivo. |
 | **1** | **Índice General y Presentación** | Guía de navegación, convenciones pedagógicas y justificación didáctica del curso. |
-| **2** | **Mapa Mental Conceptual** | Red conceptual interactiva: tipos de ondas, parámetros cinemáticos, ecuación diferencial y superposición. |
+| **2** | **Mapa Mental Conceptual** | Red conceptual interactiva: tipos de ondas, parámetros cinemáticos, onda armónica, ecuación diferencial y superposición. |
 | **3** | **Línea de Tiempo Histórica** | Hitos cronológicos: Huygens (1678), Euler (1744), d'Alembert (1747), Fourier (1822), Maxwell (1865) y Hertz (1888). |
 | **4** | **Conceptos y Definiciones Fundamentales** | Perturbación, amplitud $A$, longitud de onda $\lambda$, período $T$, frecuencia $f$, número de onda $k$, frecuencia angular $\omega$ y velocidad de fase $v$. |
-| **5** | **Ecuación Diferencial de Onda** | Deducción matemática completa a partir de la 2ª Ley de Newton en cuerda tensa: $\frac{\partial^2 y}{\partial t^2} = v^2 \frac{\partial^2 y}{\partial x^2}$. Solución general d'Alembertiana. |
-| **6** | **Principio de Superposición & Interferencia** | Linealidad del operador diferencial de onda, interferencia constructiva y destructiva, batidos y formulación de ondas estacionarias. |
-| **7** | **Laboratorio Virtual Interactivo** | Simulador GeoGebra con panel de ondas, controles en cm y s, medidor de $\lambda$, teclado virtual, paleta de estilos y ventana modal ampliada. |
-| **8** | **Ejercicios Resueltos con Protocolo de Color** | Problemas típicos de examen desglosados en: azul (datos), rojo (incógnitas), naranja (resolución analítica) y verde (validación). |
-| **9** | **Glosario Científico Ilustrado** | Diccionario científico con buscador en vivo, símbolos, definiciones formales y unidades del Sistema Internacional (SI). |
-| **10** | **Referencias Bibliográficas** | Fuentes bibliográficas canónicas universitarias citadas bajo la norma internacional **APA 7.ª edición**. |
+| **5** | **Onda Armónica Simple (O.A.S.)** | Doble periodicidad espaciotemporal, 5 formas analíticas equivalentes, cinemática de partículas $v_y, a_y$, dos gráficas interactivas GeoGebra ($y(x)$ con vectores $\vec{v}_y$ y registro temporal $y(t)$), transporte de energía y potencia media $\bar{P}$. |
+| **6** | **Ecuación Diferencial de Onda** | Deducción matemática completa a partir de la 2ª Ley de Newton en cuerda tensa: $\frac{\partial^2 y}{\partial t^2} = \left(\frac{T_s}{\mu}\right) \frac{\partial^2 y}{\partial x^2}$. Solución general d'Alembertiana. |
+| **7** | **Principio de Superposición & Interferencia** | Linealidad del operador diferencial de onda, interferencia constructiva y destructiva, batidos y formulación de ondas estacionarias. |
+| **8** | **Laboratorio Virtual Interactivo** | Simulador GeoGebra con panel de ondas, controles en cm y s, medidor de $\lambda$, teclado virtual, paleta de estilos y ventana modal ampliada. |
+| **9** | **Ejercicios Resueltos con Protocolo de Color** | Problemas típicos de examen (velocidad, superposición con desfase y cinemática completa de onda armónica) desglosados en: azul (datos), rojo (incógnitas), naranja (resolución analítica) y verde (validación). |
+| **10** | **Glosario Científico Ilustrado** | Diccionario científico con buscador en vivo, símbolos, definiciones formales y unidades del Sistema Internacional (SI). |
+| **11** | **Referencias Bibliográficas** | Fuentes bibliográficas canónicas universitarias citadas bajo la norma internacional **APA 7.ª edición**. |
 
 ---
 
 ## 🧪 Laboratorio Virtual & Simulador de Ondas
 
-El simulador se compone de tres módulos desacoplados y modulares en JavaScript puro:
+El simulador se compone de módulos desacoplados y modulares en JavaScript puro:
 
 ```
 js/
+├── harmonic-wave.js # Módulo interactivo de Onda Armónica Simple (canvases espacial y temporal, vectores vy)
+├── wave-engine.js   # Motor físico y matemático (evaluación segura, superposición, presets, JSON)
+├── wave-canvas.js   # Renderizador cartesiano GeoGebra HiDPI (ejes, cuadrícula, cotas de λ, inspector)
+└── wave-ui.js       # Controlador de interfaz de usuario (eventos, panel, teclado virtual, modal, paleta)
+```
 ├── wave-engine.js   # Motor físico y matemático (evaluación segura, superposición, presets, JSON)
 ├── wave-canvas.js   # Renderizador cartesiano GeoGebra HiDPI (ejes, cuadrícula, cotas de λ, inspector)
 └── wave-ui.js       # Controlador de interfaz de usuario (eventos, panel, teclado virtual, modal, paleta)
@@ -194,10 +209,18 @@ $$\frac{\partial^2 y}{\partial t^2} = v^2 \frac{\partial^2 y}{\partial x^2}$$
 Donde la velocidad de propagación $v$ para una cuerda sometida a tensión $T_s$ con densidad lineal de masa $\mu$ es:
 $$v = \sqrt{\frac{T_s}{\mu}}$$
 
-### 2. Onda Armónica Progresiva
-$$y(x,t) = A \cdot \sen(kx \mp \omega t + \varphi_0)$$
-* Signo $(-)$: Onda propagándose hacia la derecha ($+x$).
-* Signo $(+)$: Onda propagándose hacia la izquierda ($-x$).
+### 2. Onda Armónica Simple (O.A.S.)
+Formulación canónica y formas equivalentes:
+$$y(x,t) = A \cdot \sen(kx \mp \omega t + \phi_0) = A \cdot \sen\left[2\pi\left(\frac{x}{\lambda} \mp \frac{t}{T}\right) + \phi_0\right] = A \cdot \sen\left[k(x \mp vt) + \phi_0\right]$$
+* **Criterio de propagación:** Signo $(-)$ indica viaje hacia $+x$ (derecha); signo $(+)$ indica viaje hacia $-x$ (izquierda).
+* **Velocidad transversal de partícula (M.A.S.):**
+  $$v_y(x,t) = \frac{\partial y}{\partial t} = \mp \omega A \cos(kx \mp \omega t + \phi_0), \qquad v_{y,\text{máx}} = \omega A$$
+* **Aceleración transversal de partícula:**
+  $$a_y(x,t) = \frac{\partial^2 y}{\partial t^2} = -\omega^2 y(x,t), \qquad a_{y,\text{máx}} = \omega^2 A$$
+* **Relación cinemática con la pendiente espacial:**
+  $$v_y(x,t) = -v \cdot \frac{\partial y}{\partial x}$$
+* **Densidad de energía media y potencia promedio:**
+  $$\langle u \rangle = \frac{1}{2}\mu\omega^2 A^2 \quad [\text{J/m}], \qquad \bar{P} = \frac{1}{2}\mu v \omega^2 A^2 = 2\pi^2\mu v f^2 A^2 \quad [\text{W}]$$
 
 ### 3. Principio de Superposición Lineal
 Si $y_1(x,t), y_2(x,t), \dots, y_n(x,t)$ son soluciones de la ecuación lineal de onda, su suma también es solución:

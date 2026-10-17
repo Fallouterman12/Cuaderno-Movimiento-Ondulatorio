@@ -110,15 +110,16 @@
               <tr><td><strong>Pág. 2</strong></td><td>Mapa Mental Conceptual</td><td>Red conceptual interactiva de ondas, superposición y propagación.</td></tr>
               <tr><td><strong>Pág. 3</strong></td><td>Línea de Tiempo Histórica</td><td>De Huygens (1678) a Hertz (1888): descubrimientos clave de la física ondulatoria.</td></tr>
               <tr><td><strong>Pág. 4</strong></td><td>Conceptos y Definiciones Fundamentales</td><td>Longitud de onda, frecuencia, velocidad de propagación, frente de onda.</td></tr>
-              <tr><td><strong>Pág. 5</strong></td><td>Ecuación de Onda y Derivación</td><td>Ecuación diferencial de onda, solución general, ondas sinusoidales.</td></tr>
-              <tr><td><strong>Pág. 6</strong></td><td>Principio de Superposición</td><td>Superposición lineal, interferencia constructiva y destructiva, batidos.</td></tr>
-              <tr><td><strong>Pág. 7</strong></td><td>Laboratorio Virtual Interactivo</td><td>Simulador de ondas estilo GeoGebra, teclado virtual, paleta de estilos, ventana modal.</td></tr>
-              <tr><td><strong>Pág. 8</strong></td><td>Ejercicios Resueltos</td><td>Datos (azul), incógnitas (rojo), resultados (naranja), validación (verde).</td></tr>
-              <tr><td><strong>Pág. 9</strong></td><td>Glosario Científico</td><td>Términos, símbolos, unidades SI y buscador dinámico.</td></tr>
-              <tr><td><strong>Pág. 10</strong></td><td>Referencias Bibliográficas (APA 7)</td><td>Bibliografía universitaria con normas APA 7.</td></tr>
+              <tr><td><strong>Pág. 5</strong></td><td>Onda Armónica Simple (O.A.S.)</td><td>Cinemática de partículas $v_y, a_y$, doble periodicidad, gráficas interactivas y potencia $\bar{P}$.</td></tr>
+              <tr><td><strong>Pág. 6</strong></td><td>Ecuación de Onda y Derivación</td><td>Ecuación diferencial de onda, solución general de d'Alembert, cuerda tensa.</td></tr>
+              <tr><td><strong>Pág. 7</strong></td><td>Principio de Superposición</td><td>Superposición lineal, interferencia constructiva y destructiva, batidos.</td></tr>
+              <tr><td><strong>Pág. 8</strong></td><td>Laboratorio Virtual Interactivo</td><td>Simulador de ondas estilo GeoGebra, teclado virtual, paleta de estilos, ventana modal.</td></tr>
+              <tr><td><strong>Pág. 9</strong></td><td>Ejercicios Resueltos con Protocolo de Color</td><td>Datos (azul), incógnitas (rojo), resultados (naranja), validación (verde).</td></tr>
+              <tr><td><strong>Pág. 10</strong></td><td>Glosario Científico Ilustrado</td><td>Términos, símbolos, unidades SI y buscador dinámico.</td></tr>
+              <tr><td><strong>Pág. 11</strong></td><td>Referencias Bibliográficas (APA 7)</td><td>Bibliografía universitaria canónica con normas APA 7.</td></tr>
             </tbody>
           </table>
-          <div class="table-caption"><strong>Tabla 1:</strong> Estructura secuencial de las páginas del cuaderno interactivo de Movimiento Ondulatorio.</div>
+          <div class="table-caption"><strong>Tabla 1:</strong> Estructura secuencial de las 11 páginas de contenido del cuaderno interactivo de Movimiento Ondulatorio.</div>
         </div>
       </div>
     </section>
@@ -139,7 +140,7 @@
         <div class="mindmap-wrapper">
           <div class="mindmap-container">
             <div class="mindmap-root-node">🌊 MOVIMIENTO ONDULATORIO</div>
-            <div class="mindmap-branches">
+            <div class="mindmap-branches" style="grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));">
               <div class="mindmap-branch-card" style="border-top-color:#2563eb">
                 <div class="branch-title">📐 Tipos de Ondas</div>
                 <ul class="branch-subitems">
@@ -152,19 +153,28 @@
               <div class="mindmap-branch-card" style="border-top-color:#059669">
                 <div class="branch-title">📏 Parámetros de Onda</div>
                 <ul class="branch-subitems">
-                  <li class="branch-subitem">Amplitud $A$ [m]</li>
-                  <li class="branch-subitem">Longitud de onda $\lambda$ [m]</li>
+                  <li class="branch-subitem">Amplitud $A$ [m / cm]</li>
+                  <li class="branch-subitem">Longitud de onda $\lambda$ [m / cm]</li>
                   <li class="branch-subitem">Período $T$ [s] / Frecuencia $f$ [Hz]</li>
                   <li class="branch-subitem">Número de onda $k = 2\pi/\lambda$</li>
+                </ul>
+              </div>
+              <div class="mindmap-branch-card" style="border-top-color:#0284c7">
+                <div class="branch-title">🌊 Onda Armónica (O.A.S.)</div>
+                <ul class="branch-subitems">
+                  <li class="branch-subitem">$y(x,t) = A\sen(kx \mp \omega t + \phi_0)$</li>
+                  <li class="branch-subitem">Velocidad partícula $v_y = \partial y/\partial t$</li>
+                  <li class="branch-subitem">Aceleración $a_y = -\omega^2 y$ (M.A.S.)</li>
+                  <li class="branch-subitem">Potencia media $\bar{P} = \frac{1}{2}\mu v \omega^2 A^2$</li>
                 </ul>
               </div>
               <div class="mindmap-branch-card" style="border-top-color:#dc2626">
                 <div class="branch-title">⚡ Ecuación de Onda</div>
                 <ul class="branch-subitems">
                   <li class="branch-subitem">$\frac{\partial^2 y}{\partial t^2} = v^2 \frac{\partial^2 y}{\partial x^2}$</li>
-                  <li class="branch-subitem">$y(x,t) = A\sen(kx - \omega t)$</li>
+                  <li class="branch-subitem">Cuerda tensa: $v = \sqrt{T_s/\mu}$</li>
                   <li class="branch-subitem">$v = \lambda \cdot f = \omega / k$</li>
-                  <li class="branch-subitem">Velocidad de fase / grupo</li>
+                  <li class="branch-subitem">Solución d'Alembert $f(x \mp vt)$</li>
                 </ul>
               </div>
               <div class="mindmap-branch-card" style="border-top-color:#7c3aed">
@@ -317,9 +327,385 @@
     </section>
 
     <!-- ══════════════════════════════════════════════════════════
-         PÁGINA 5: ECUACIÓN DE ONDA
+         PÁGINA 5: ONDA ARMÓNICA SIMPLE (O.A.S.)
          ══════════════════════════════════════════════════════════ -->
-    <section class="notebook-sheet is-content-page notebook-page" id="page-5" aria-label="Página 5: Ecuación de Onda">
+    <section class="notebook-sheet is-content-page notebook-page" id="page-5" aria-label="Página 5: Onda Armónica Simple">
+      <div class="page-inner-content">
+        <header class="page-editorial-header">
+          <div>
+            <div class="page-category-tag"><span>🌊</span> Cinemática & Dinámica Ondulatoria</div>
+            <h1 class="page-title">Onda Armónica Simple (O.A.S.)</h1>
+            <p class="page-subtitle">Doble periodicidad espaciotemporal, formulación matemática, cinemática de partículas y transporte energético</p>
+          </div>
+          <div class="page-number-indicator">Página 5</div>
+        </header>
+
+        <!-- 1. Concepto y Naturaleza Física -->
+        <div class="concept-card">
+          <h2 class="concept-card-title"><span>1.</span> Naturaleza Física y Doble Periodicidad</h2>
+          <p style="text-align:justify">
+            Una <strong>onda armónica simple</strong> (o tren de ondas sinusoidal) es la perturbación periódica más elemental y fundamental de la física ondulatoria. Se genera cuando la fuente emisora ejecuta un <strong>Movimiento Armónico Simple (M.A.S.)</strong>. Gracias al <em>Teorema de Fourier</em>, cualquier perturbación periódica compleja o pulso arbitrario puede descomponerse rigurosamente como una superposición de ondas armónicas simples de distintas frecuencias y amplitudes.
+          </p>
+          <p style="margin-top:10px;text-align:justify">
+            La característica definitoria de la onda armónica es su <strong>doble periodicidad inseparable</strong>:
+          </p>
+          <ul style="margin:12px 0 12px 24px;display:flex;flex-direction:column;gap:8px;font-size:.95rem">
+            <li><strong>Periodicidad Espacial ($\lambda$):</strong> Si tomamos una fotografía instantánea del medio fijando el tiempo en $t = t_0$, el perfil geométrico de la cuerda es una curva sinusoidal que se repite exactamente a intervalos de distancia iguales a la <strong>longitud de onda $\lambda$</strong>. La tasa angular de variación espacial es el <em>número de onda</em>:
+              $$k = \frac{2\pi}{\lambda} \quad [\text{rad/m} \text{ o } \text{rad/cm}]$$
+            </li>
+            <li><strong>Periodicidad Temporal ($T$):</strong> Si fijamos nuestra atención en una partícula específica del medio situada en una posición fija $x = x_0$, dicha partícula no avanza en el espacio, sino que oscila en el tiempo describiendo un M.A.S. de <strong>período $T$</strong> y <strong>frecuencia $f = 1/T$</strong>. La rapidez angular de oscilación temporal es la <em>frecuencia angular</em>:
+              $$\omega = 2\pi f = \frac{2\pi}{T} \quad [\text{rad/s}]$$
+            </li>
+          </ul>
+          <p>
+            Ambas periodicidades se conectan a través de la <strong>velocidad de propagación de la fase ($v$)</strong>, la cual depende exclusivamente de las propiedades inerciales y elásticas del medio transmisor:
+          </p>
+          <div class="equation-block">
+            <div class="equation-content">$$v = \frac{\lambda}{T} = \lambda \cdot f = \frac{\omega}{k}$$</div>
+            <div class="equation-tag">Ec. (4)</div>
+          </div>
+        </div>
+
+        <!-- 2. Formulación Matemática Completa y Formas Equivalentes -->
+        <div class="concept-card">
+          <h2 class="concept-card-title"><span>2.</span> Ecuación Matemática General y Formas Equivalentes</h2>
+          <p>
+            La función matemática que describe la elongación o desplazamiento transversal $y(x,t)$ de cualquier partícula en la coordenada $x$ y en el instante $t$ se expresa en su <strong>forma canónica</strong> como:
+          </p>
+          <div class="equation-block">
+            <div class="equation-content">$$y(x,t) = A \cdot \sen(kx \mp \omega t + \phi_0) \quad \text{o bien} \quad y(x,t) = A \cdot \cos(kx \mp \omega t + \phi_0)$$</div>
+            <div class="equation-tag">Ec. (5)</div>
+          </div>
+          <p style="margin-top:8px">
+            Donde la fase instantánea es $\Phi(x,t) = kx \mp \omega t + \phi_0$. Dependiendo de los parámetros experimentales disponibles, la función de onda armónica simple adopta <strong>cinco formas analíticas fundamentales equivalentes</strong>:
+          </p>
+
+          <div class="scientific-table-wrapper">
+            <table class="scientific-table">
+              <thead><tr><th>Forma Analítica</th><th>Expresión Matemática $y(x,t)$</th><th>Parámetros Base Empleados</th><th>Ámbito de Uso Común</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Forma 1 (Canónica)</strong></td><td>$A \sen(kx \mp \omega t + \phi_0)$</td><td>Número de onda $k$ y Frecuencia angular $\omega$</td><td>Física matemática y cálculo analítico</td></tr>
+                <tr><td><strong>Forma 2 (Periódica)</strong></td><td>$A \sen\!\left[2\pi\left(\dfrac{x}{\lambda} \mp \dfrac{t}{T}\right) + \phi_0\right]$</td><td>Longitud de onda $\lambda$ y Período $T$</td><td>Laboratorios de medición directa</td></tr>
+                <tr><td><strong>Forma 3 (Velocidad-k)</strong></td><td>$A \sen\!\left[k(x \mp vt) + \phi_0\right]$</td><td>Número de onda $k$ y Velocidad de onda $v$</td><td>Solución general de d'Alembert $f(x \mp vt)$</td></tr>
+                <tr><td><strong>Forma 4 (Longitud-v)</strong></td><td>$A \sen\!\left[\dfrac{2\pi}{\lambda}(x \mp vt) + \phi_0\right]$</td><td>Longitud de onda $\lambda$ y Velocidad $v$</td><td>Acústica y telecomunicaciones</td></tr>
+                <tr><td><strong>Forma 5 (Angular-v)</strong></td><td>$A \sen\!\left[\omega\left(\dfrac{x}{v} \mp t\right) + \phi_0\right]$</td><td>Frecuencia angular $\omega$ y Velocidad $v$</td><td>Líneas de transmisión y circuitos RF</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table-caption"><strong>Tabla 3:</strong> Formas analíticas equivalentes de la ecuación de una onda armónica simple unidimensional.</div>
+
+          <div class="didactic-box" style="margin-top:16px;background:#f8fafc;border-color:#cbd5e1">
+            <div class="didactic-title" style="color:#0f2744"><span>🧭</span> Criterio Riguroso del Signo de Propagación</div>
+            <div class="didactic-content">
+              Para determinar en qué dirección viaja la onda, analizamos el movimiento de un punto de <em>fase constante</em> $\Phi(x,t) = kx \mp \omega t = C$. Diferenciando respecto al tiempo:
+              $$k \frac{dx}{dt} \mp \omega = 0 \implies \frac{dx}{dt} = \pm \frac{\omega}{k} = \pm v$$
+              <ul style="margin:8px 0 0 20px;display:flex;flex-direction:column;gap:4px">
+                <li><strong>Signo menos $(-)$ en $(kx - \omega t)$:</strong> La velocidad $\dfrac{dx}{dt} = +v > 0$, la onda viaja hacia la <strong>derecha ($+x$)</strong>.</li>
+                <li><strong>Signo más $(+)$ en $(kx + \omega t)$:</strong> La velocidad $\dfrac{dx}{dt} = -v < 0$, la onda viaja hacia la <strong>izquierda ($-x$)</strong>.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Cinemática de las Partículas vs Velocidad de Onda -->
+        <div class="concept-card">
+          <h2 class="concept-card-title"><span>3.</span> Cinemática de las Partículas del Medio (M.A.S. Local)</h2>
+          <p style="text-align:justify">
+            Uno de los errores conceptuales más frecuentes en física ondulatoria radica en confundir la <strong>velocidad de propagación de la onda ($v$)</strong> con la <strong>velocidad transversal de oscilación de las partículas del medio ($v_y$)</strong>:
+          </p>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:16px 0">
+            <div class="block-datos" style="margin:0">
+              <strong style="color:#1d4ed8;font-size:1rem">🌊 Velocidad de la Onda ($v$)</strong>
+              <p style="margin-top:6px;font-size:.9rem;color:#1e3a8a">
+                Es la velocidad con la que se propaga la <em>perturbación, la fase y la energía</em> a lo largo del eje $x$. Es constante en medios homogéneos y <strong>no desplaza materia</strong>.
+              </p>
+              <div style="margin-top:8px;font-family:var(--font-mono);font-size:.88rem;color:#1d4ed8;font-weight:700">v = λ · f = ω / k = cte</div>
+            </div>
+            <div class="block-valido" style="margin:0">
+              <strong style="color:#047857;font-size:1rem">⚛️ Velocidad de Partícula ($v_y$)</strong>
+              <p style="margin-top:6px;font-size:.9rem;color:#065f46">
+                Es la tasa temporal con la que un elemento material del medio oscila verticalmente arriba y abajo alrededor del equilibrio. Es armónica y variable.
+              </p>
+              <div style="margin-top:8px;font-family:var(--font-mono);font-size:.88rem;color:#047857;font-weight:700">v_y(x,t) = ∂y/∂t</div>
+            </div>
+          </div>
+
+          <p>Derivando parcialmente la función de onda $y(x,t) = A\sen(kx - \omega t + \phi_0)$ respecto al tiempo $t$ obtenemos la cinemática completa:</p>
+          
+          <div class="equation-block">
+            <div class="equation-content">$$v_y(x,t) = \frac{\partial y}{\partial t} = -\omega A \cos(kx - \omega t + \phi_0) = \omega A \sen\!\left(kx - \omega t + \phi_0 + \frac{\pi}{2}\right)$$</div>
+            <div class="equation-tag">Ec. (6)</div>
+          </div>
+          <p>
+            La <strong>velocidad transversal máxima</strong> es:
+            $$v_{y,\text{máx}} = \omega A = 2\pi f A$$
+            Ocurre cuando la partícula cruza la posición de equilibrio ($y = 0$). En las crestas y valles ($y = \pm A$), la partícula se detiene instantáneamente ($v_y = 0$). La velocidad $v_y$ está <strong>adelantada $\pi/2$ rad ($90^\circ$)</strong> respecto a la elongación $y$.
+          </p>
+
+          <p style="margin-top:12px">Derivando por segunda vez respecto al tiempo:</p>
+          <div class="equation-block">
+            <div class="equation-content">$$a_y(x,t) = \frac{\partial^2 y}{\partial t^2} = -\omega^2 A \sen(kx - \omega t + \phi_0) = -\omega^2 y(x,t)$$</div>
+            <div class="equation-tag">Ec. (7)</div>
+          </div>
+          <div class="block-resuelto">
+            <strong>🎯 Demostración Fundamental del M.A.S.:</strong> La aceleración transversal de cada partícula satisface $a_y = -\omega^2 y$, lo cual es exactamente la ecuación diferencial que define al Movimiento Armónico Simple. La aceleración máxima es:
+            $$a_{y,\text{máx}} = \omega^2 A = 4\pi^2 f^2 A$$
+            y se encuentra en <strong>oposición de fase ($\pi$ rad o $180^\circ$)</strong> respecto al desplazamiento $y$.
+          </div>
+
+          <p style="margin-top:14px">
+            Asimismo, derivando espacialmente respecto a $x$ se obtiene la <strong>pendiente local</strong> de la cuerda:
+            $$\frac{\partial y}{\partial x} = k A \cos(kx - \omega t + \phi_0)$$
+            Relacionando ambas derivadas obtenemos la identidad cinemática cardinal:
+          </p>
+          <div class="equation-block">
+            <div class="equation-content">$$v_y(x,t) = -v \cdot \frac{\partial y}{\partial x}$$</div>
+            <div class="equation-tag">Ec. (8)</div>
+          </div>
+          <p style="font-size:.9rem;color:#64748b;font-style:italic">
+            <strong>Regla física visual:</strong> Para una onda que viaja a la derecha ($v > 0$), las secciones de la cuerda con pendiente negativa suben ($v_y > 0$), y las secciones con pendiente positiva bajan ($v_y < 0$).
+          </p>
+        </div>
+
+        <!-- 4. Laboratorio Gráfico Interactivo 1: Perfil Espacial y Vectores vy -->
+        <div class="oas-interactive-card">
+          <div class="oas-card-header">
+            <div class="oas-card-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2.5"><path d="M2 12h5l3 8 4-16 3 8h5"/></svg>
+              <span>Gráfica Interactiva 1: Perfil Espacial Instantáneo $y(x)$ con Cotas y Vectores $\vec{v}_y$</span>
+            </div>
+            <span class="badge-tag" style="background:#eff6ff;color:#1d4ed8;border-color:#bfdbfe">Simulación en cm y s</span>
+          </div>
+
+          <!-- Lienzo Espacial GeoGebra -->
+          <div class="oas-canvas-wrapper">
+            <canvas id="oas-spatial-canvas" class="oas-canvas" data-height="340" aria-label="Gráfico interactivo del perfil espacial de la onda armónica simple"></canvas>
+          </div>
+
+          <!-- Controles del Laboratorio Espacial -->
+          <div class="oas-controls-panel">
+            <div class="oas-btn-row">
+              <button id="oas-btn-play" class="btn-oas btn-oas-primary" aria-label="Reproducir o pausar animación">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+                <span>Pausar</span>
+              </button>
+              <button id="oas-btn-dir" class="btn-oas" aria-label="Cambiar dirección de propagación">
+                <span>Dirección:</span> <strong>+x (Derecha →)</strong>
+              </button>
+              <button id="oas-btn-reset" class="btn-oas" aria-label="Reiniciar tiempo a cero">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-4"/></svg>
+                <span>t = 0</span>
+              </button>
+              <span id="oas-time-badge" class="oas-time-badge">t = 0.000 s</span>
+            </div>
+
+            <!-- Deslizadores de Parámetros -->
+            <div class="oas-sliders-grid">
+              <div class="oas-slider-box">
+                <div class="oas-slider-header">
+                  <span>Amplitud ($A$):</span>
+                  <span id="oas-amp-val" class="oas-slider-val">3.0 cm</span>
+                </div>
+                <input type="range" id="oas-amp" class="oas-range-input" min="1.0" max="5.0" step="0.5" value="3.0">
+              </div>
+
+              <div class="oas-slider-box">
+                <div class="oas-slider-header">
+                  <span>Longitud de onda ($\lambda$):</span>
+                  <span id="oas-lambda-val" class="oas-slider-val">8.0 cm</span>
+                </div>
+                <input type="range" id="oas-lambda" class="oas-range-input" min="4.0" max="16.0" step="0.5" value="8.0">
+              </div>
+
+              <div class="oas-slider-box">
+                <div class="oas-slider-header">
+                  <span>Frecuencia ($f$):</span>
+                  <span id="oas-freq-val" class="oas-slider-val">0.50 Hz</span>
+                </div>
+                <input type="range" id="oas-freq" class="oas-range-input" min="0.1" max="2.0" step="0.05" value="0.5">
+              </div>
+
+              <div class="oas-slider-box">
+                <div class="oas-slider-header">
+                  <span>Fase inicial ($\phi_0$):</span>
+                  <span id="oas-phi0-val" class="oas-slider-val">0</span>
+                </div>
+                <input type="range" id="oas-phi0" class="oas-range-input" min="0" max="6.283" step="0.392" value="0">
+              </div>
+            </div>
+
+            <!-- Fila de Magnitudes Calculadas en Vivo -->
+            <div class="oas-metrics-strip">
+              <div class="oas-metric-pill">
+                <span class="oas-metric-label">Velocidad ($v$)</span>
+                <span id="oas-calc-v" class="oas-metric-val" style="color:#2563eb">4.00 cm/s</span>
+              </div>
+              <div class="oas-metric-pill">
+                <span class="oas-metric-label">Período ($T$)</span>
+                <span id="oas-calc-t" class="oas-metric-val" style="color:#059669">2.00 s</span>
+              </div>
+              <div class="oas-metric-pill">
+                <span class="oas-metric-label">Número onda ($k$)</span>
+                <span id="oas-calc-k" class="oas-metric-val" style="color:#7c3aed">0.785 rad/cm</span>
+              </div>
+              <div class="oas-metric-pill">
+                <span class="oas-metric-label">Frec. angular ($\omega$)</span>
+                <span id="oas-calc-omega" class="oas-metric-val" style="color:#ea580c">3.14 rad/s</span>
+              </div>
+              <div class="oas-metric-pill">
+                <span class="oas-metric-label">Vel. part. máx ($v_{y,\text{máx}}$)</span>
+                <span id="oas-calc-vymax" class="oas-metric-val" style="color:#0d9488">9.42 cm/s</span>
+              </div>
+              <div class="oas-metric-pill">
+                <span class="oas-metric-label">Acel. máx ($a_{y,\text{máx}}$)</span>
+                <span id="oas-calc-aymax" class="oas-metric-val" style="color:#dc2626">29.6 cm/s²</span>
+              </div>
+            </div>
+
+            <div id="oas-eq-preview" class="oas-eq-banner">
+              y(x,t) = 3.0 · sen(0.79x − 3.14t)
+            </div>
+          </div>
+          <div class="figure-caption"><span class="figure-number">Gráfico 1:</span> Visualización dinámica del perfil espacial de la onda armónica simple. Nótese la cota continua de longitud de onda ($\lambda$), cota de amplitud ($A$), y los vectores de velocidad transversal ($\vec{v}_y$) en verde que demuestran el movimiento vertical de cada partícula del medio.</div>
+        </div>
+
+        <!-- 5. Laboratorio Gráfico Interactivo 2: Registro Temporal M.A.S. -->
+        <div class="oas-interactive-card">
+          <div class="oas-card-header">
+            <div class="oas-card-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span>Gráfica Interactiva 2: Registro Temporal $y(t)$, $v_y(t)$, $a_y(t)$ en una Partícula Fija ($x_0 = 4\text{ cm}$)</span>
+            </div>
+            <div class="oas-legend-toggles">
+              <label class="oas-toggle-item">
+                <input type="checkbox" id="oas-chk-y" checked>
+                <span class="oas-color-dot dot-blue"></span>
+                <span>$y(t)$ Posición</span>
+              </label>
+              <label class="oas-toggle-item">
+                <input type="checkbox" id="oas-chk-vy" checked>
+                <span class="oas-color-dot dot-green"></span>
+                <span>$v_y(t)$ Velocidad ($\Delta\phi = \frac{\pi}{2}$)</span>
+              </label>
+              <label class="oas-toggle-item">
+                <input type="checkbox" id="oas-chk-ay" checked>
+                <span class="oas-color-dot dot-red"></span>
+                <span>$a_y(t)$ Aceleración ($\Delta\phi = \pi$)</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Lienzo Temporal GeoGebra -->
+          <div class="oas-canvas-wrapper">
+            <canvas id="oas-temporal-canvas" class="oas-canvas" data-height="300" aria-label="Gráfico del registro temporal de una partícula ejecutando M.A.S."></canvas>
+          </div>
+          <div class="figure-caption"><span class="figure-number">Gráfico 2:</span> Evolución temporal de una partícula fija en $x = x_0$ a lo largo de más de 2 períodos ($2T$). El marcador vertical naranja se desplaza en sincronía exacta con el tiempo $t$. Se aprecian con nitidez los desfases teóricos: la velocidad $v_y$ adelantada $90^\circ$ y la aceleración $a_y$ en oposición de fase ($180^\circ$).</div>
+        </div>
+
+        <!-- 6. Energía y Potencia de la Onda Armónica -->
+        <div class="concept-card">
+          <h2 class="concept-card-title"><span>4.</span> Energía, Densidad de Energía y Potencia Transmitida</h2>
+          <p style="text-align:justify">
+            A medida que la onda armónica viaja a lo largo de una cuerda tensa con densidad lineal de masa $\mu$ sometida a tensión $T_s$, transmite energía mecánica hacia adelante. Consideremos un elemento diferencial de masa $dm = \mu \, dx$:
+          </p>
+
+          <ul style="margin:12px 0 12px 24px;display:flex;flex-direction:column;gap:10px;font-size:.95rem">
+            <li><strong>Energía Cinética en el elemento $dx$:</strong>
+              $$dK = \frac{1}{2} dm \, v_y^2 = \frac{1}{2} (\mu dx) \left[-\omega A \cos(kx - \omega t)\right]^2 = \frac{1}{2} \mu \omega^2 A^2 \cos^2(kx - \omega t) \, dx$$
+            </li>
+            <li><strong>Energía Potencial Elástica en el elemento $dx$:</strong> Debido al estiramiento mecánico de la cuerda bajo la tensión $T_s = \mu v^2$:
+              $$dU = \frac{1}{2} T_s \left(\frac{\partial y}{\partial x}\right)^2 dx = \frac{1}{2} (\mu v^2) \left[k A \cos(kx - \omega t)\right]^2 dx = \frac{1}{2} \mu \omega^2 A^2 \cos^2(kx - \omega t) \, dx$$
+            </li>
+          </ul>
+
+          <div class="didactic-box" style="background:#eff6ff;border-color:#93c5fd">
+            <div class="didactic-title" style="color:#1d4ed8">💡 Propiedad Exclusiva de las Ondas Viajeras</div>
+            <div class="didactic-content">
+              ¡A diferencia de un oscilador armónico simple aislado (donde la energía cinética se convierte alternadamente en potencial de modo que su suma es constante), en una <strong>onda progresiva viajera</strong> la energía cinética y la potencial <em>están en fase</em> en cada elemento $dx$! Son simultáneamente máximas en los nodos de cruce por el equilibrio ($y = 0$, donde la pendiente y la velocidad transversal son máximas) y son cero en las crestas y valles ($y = \pm A$).
+            </div>
+          </div>
+
+          <p style="margin-top:14px">La <strong>densidad de energía total instantánea</strong> $u(x,t) = \dfrac{dE}{dx}$ es:</p>
+          <div class="equation-block">
+            <div class="equation-content">$$u(x,t) = \frac{dK + dU}{dx} = \mu \omega^2 A^2 \cos^2(kx - \omega t) \quad [\text{J/m}]$$</div>
+            <div class="equation-tag">Ec. (9)</div>
+          </div>
+          <p>
+            Dado que el valor promedio temporal de $\cos^2(\theta)$ a lo largo de un período completo es $\langle \cos^2 \rangle = 1/2$, la <strong>densidad de energía media</strong> por unidad de longitud es:
+          </p>
+          <div class="equation-block">
+            <div class="equation-content">$$\langle u \rangle = \frac{1}{2} \mu \omega^2 A^2 = 2\pi^2 \mu f^2 A^2 \quad [\text{J/m}]$$</div>
+            <div class="equation-tag">Ec. (10)</div>
+          </div>
+
+          <p style="margin-top:12px">
+            La <strong>potencia instantánea $P(x,t)$</strong> transmitida a través de cualquier punto de la cuerda es el producto de la fuerza transversal ejercida por la tensión $F_y = -T_s \frac{\partial y}{\partial x}$ y la velocidad transversal $v_y$:
+            $$P(x,t) = F_y \cdot (-v_y) = \left(-T_s \frac{\partial y}{\partial x}\right) \left(-\frac{\partial y}{\partial t}\right) = \mu v \omega^2 A^2 \cos^2(kx - \omega t)$$
+          </p>
+          <p>Promediando sobre un ciclo completo, obtenemos la <strong>Potencia Media (Promedio) transmitida</strong>:</p>
+          <div class="equation-block">
+            <div class="equation-content">$$\bar{P} = \langle P \rangle = \frac{1}{2} \mu v \omega^2 A^2 = 2\pi^2 \mu v f^2 A^2 \quad [\text{W}]$$</div>
+            <div class="equation-tag">Ec. (11)</div>
+          </div>
+          <div class="block-valido">
+            <strong>⚡ Principio Físico Fundamental:</strong> La tasa media de transferencia de energía por una onda armónica simple es directamente proporcional al <strong>cuadrado de la amplitud ($A^2$)</strong> y al <strong>cuadrado de la frecuencia ($f^2$)</strong>. Duplicar la amplitud o la frecuencia cuadruplica la potencia transmitida por la onda.
+          </div>
+        </div>
+
+        <!-- 7. Ejercicio de Aplicación Integrado -->
+        <div class="concept-card">
+          <h2 class="concept-card-title"><span>5.</span> Ejercicio Numérico Guía con Protocolo de Color</h2>
+          <p>
+            Una onda armónica simple transversal viaja hacia la derecha por una cuerda tensa con densidad lineal $\mu = 0.05\,\text{kg/m}$ bajo una tensión $T_s = 45\,\text{N}$. Su ecuación matemática es:
+            $$y(x,t) = 0.04 \cdot \sen(5\pi x - 30\pi t + \pi/6) \quad [\text{SI: metros, segundos}]$$
+          </p>
+
+          <div class="block-datos">
+            <span class="datos">Datos:</span> $A = 0.04\,\text{m} = 4\,\text{cm}$, $k = 5\pi\,\text{rad/m}$, $\omega = 30\pi\,\text{rad/s}$, $\phi_0 = \pi/6\,\text{rad}$, $\mu = 0.05\,\text{kg/m}$, $T_s = 45\,\text{N}$, signo $(-)$ en el argumento.
+          </div>
+
+          <div class="block-incognitas">
+            <span class="incognita">Incógnitas:</span>
+            a) Dirección y velocidad de propagación ($v$).<br>
+            b) Longitud de onda ($\lambda$), frecuencia ($f$) y período ($T$).<br>
+            c) Velocidad transversal máxima ($v_{y,\text{máx}}$) y aceleración máxima ($a_{y,\text{máx}}$).<br>
+            d) Potencia media transportada ($\bar{P}$).
+          </div>
+
+          <div class="block-resuelto">
+            <span class="resuelto">Solución Analítica Paso a Paso:</span><br><br>
+            <strong>a) Velocidad de propagación:</strong> Por el signo $(-)$, la onda se desplaza hacia la <strong>derecha ($+x$)</strong>.<br>
+            $$v = \frac{\omega}{k} = \frac{30\pi\,\text{rad/s}}{5\pi\,\text{rad/m}} = \mathbf{6.00\,\text{m/s}}$$
+            Verificando con la relación elástica: $v = \sqrt{\frac{T_s}{\mu}} = \sqrt{\frac{45}{0.05}} = \sqrt{900} = \mathbf{30\,\text{m/s}}$ (para cuerda tensa homogénea).<br><br>
+
+            <strong>b) Longitud de onda, frecuencia y período:</strong><br>
+            $$\lambda = \frac{2\pi}{k} = \frac{2\pi}{5\pi} = \mathbf{0.40\,\text{m}} = 40\,\text{cm}$$
+            $$f = \frac{\omega}{2\pi} = \frac{30\pi}{2\pi} = \mathbf{15.0\,\text{Hz}} \qquad T = \frac{1}{f} = \frac{1}{15} \approx \mathbf{0.0667\,\text{s}}$$
+            Comprobación: $v = \lambda \cdot f = (0.40\,\text{m})(15\,\text{s}^{-1}) = 6.0\,\text{m/s}$. ✓<br><br>
+
+            <strong>c) Cinemática máxima de las partículas:</strong><br>
+            $$v_{y,\text{máx}} = \omega A = (30\pi\,\text{rad/s})(0.04\,\text{m}) = 1.2\pi \approx \mathbf{3.77\,\text{m/s}}$$
+            $$a_{y,\text{máx}} = \omega^2 A = (30\pi)^2 (0.04) = 360\pi^2 \approx \mathbf{355.3\,\text{m/s}^2}$$<br>
+
+            <strong>d) Potencia media transmitida:</strong><br>
+            $$\bar{P} = \frac{1}{2}\mu v \omega^2 A^2 = \frac{1}{2}(0.05\,\text{kg/m})(6.0\,\text{m/s})(30\pi\,\text{rad/s})^2(0.04\,\text{m})^2$$
+            $$\bar{P} = 0.15 \cdot 8882.64 \cdot 0.0016 = \mathbf{2.13\,\text{W}}$$
+          </div>
+
+          <div class="block-valido">
+            <span class="valido">Validación Dimensional y Física:</span><br>
+            • Las dimensiones de potencia son $[M][L]^2[T]^{-3} = \text{J/s} = \text{W}$. Comprobado.<br>
+            • La velocidad transversal de partícula ($v_{y,\text{máx}} = 3.77\,\text{m/s}$) es menor que la velocidad de onda ($v = 6.0\,\text{m/s}$), cumpliendo la aproximación lineal de pequeñas deformaciones ($kA = 5\pi \cdot 0.04 = 0.628 \text{ rad} \approx 0.2\pi \ll 1$). ✓
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         PÁGINA 6: ECUACIÓN DE ONDA
+         ══════════════════════════════════════════════════════════ -->
+    <section class="notebook-sheet is-content-page notebook-page" id="page-6" aria-label="Página 6: Ecuación de Onda">
       <div class="page-inner-content">
         <header class="page-editorial-header">
           <div>
@@ -327,7 +713,7 @@
             <h1 class="page-title">Ecuación de Onda y Derivación</h1>
             <p class="page-subtitle">Deducción de la ecuación diferencial de ondas y análisis de sus soluciones</p>
           </div>
-          <div class="page-number-indicator">Página 5</div>
+          <div class="page-number-indicator">Página 6</div>
         </header>
 
         <div class="concept-card">
@@ -335,7 +721,7 @@
           <p>La <strong>ecuación de onda lineal unidimensional</strong> es una ecuación diferencial en derivadas parciales que describe la propagación de perturbaciones en medios lineales:</p>
           <div class="equation-block">
             <div class="equation-content">$$\frac{\partial^2 y}{\partial t^2} = v^2 \frac{\partial^2 y}{\partial x^2}$$</div>
-            <div class="equation-tag">Ec. (4)</div>
+            <div class="equation-tag">Ec. (12)</div>
           </div>
           <p>donde $v$ es la velocidad de propagación de la onda en el medio.</p>
         </div>
@@ -345,31 +731,31 @@
           <p>Se propone la solución general $y(x,t) = A\,\text{sen}(kx - \omega t)$. Derivando dos veces:</p>
           <div class="equation-block">
             <div class="equation-content">$$\frac{\partial^2 y}{\partial t^2} = -\omega^2 A\,\text{sen}(kx-\omega t) \qquad \frac{\partial^2 y}{\partial x^2} = -k^2 A\,\text{sen}(kx-\omega t)$$</div>
-            <div class="equation-tag">Ec. (5)</div>
+            <div class="equation-tag">Ec. (13)</div>
           </div>
           <p>Sustituyendo en la ecuación de onda: $-\omega^2 = v^2(-k^2)$, por lo tanto:</p>
           <div class="equation-block">
             <div class="equation-content">$$v = \frac{\omega}{k} \quad \Longleftrightarrow \quad v = \lambda f$$</div>
-            <div class="equation-tag">Ec. (6)</div>
+            <div class="equation-tag">Ec. (14)</div>
           </div>
         </div>
 
         <div class="concept-card">
-          <h2 class="concept-card-title"><span>3.</span> Energía de una Onda</h2>
-          <p>La densidad de energía por unidad de longitud en una onda mecánica sinusoidal es:</p>
+          <h2 class="concept-card-title"><span>3.</span> Deducción a partir de una Cuerda Tensa</h2>
+          <p>Aplicando la Segunda Ley de Newton ($\sum F_y = dm \cdot a_y$) sobre un segmento diferencial de cuerda de masa $dm = \mu dx$ bajo tensión $T_s$, para ángulos pequeños ($\tan\theta \approx \sin\theta \approx \partial y/\partial x$):</p>
           <div class="equation-block">
-            <div class="equation-content">$$u = \frac{1}{2}\mu \omega^2 A^2$$</div>
-            <div class="equation-tag">Ec. (7)</div>
+            <div class="equation-content">$$T_s \frac{\partial^2 y}{\partial x^2} dx = (\mu dx) \frac{\partial^2 y}{\partial t^2} \implies \frac{\partial^2 y}{\partial t^2} = \left(\frac{T_s}{\mu}\right) \frac{\partial^2 y}{\partial x^2}$$</div>
+            <div class="equation-tag">Ec. (15)</div>
           </div>
-          <p>y la potencia promedio transmitida es $P = \dfrac{1}{2}\mu v \omega^2 A^2$, proporcional al <em>cuadrado de la amplitud</em>.</p>
+          <p>De donde se deduce la célebre velocidad de propagación mecánica en cuerdas: $v = \sqrt{\dfrac{T_s}{\mu}}$.</p>
         </div>
       </div>
     </section>
 
     <!-- ══════════════════════════════════════════════════════════
-         PÁGINA 6: PRINCIPIO DE SUPERPOSICIÓN
+         PÁGINA 7: PRINCIPIO DE SUPERPOSICIÓN
          ══════════════════════════════════════════════════════════ -->
-    <section class="notebook-sheet is-content-page notebook-page" id="page-6" aria-label="Página 6: Superposición">
+    <section class="notebook-sheet is-content-page notebook-page" id="page-7" aria-label="Página 7: Superposición">
       <div class="page-inner-content">
         <header class="page-editorial-header">
           <div>
@@ -377,7 +763,7 @@
             <h1 class="page-title">Principio de Superposición</h1>
             <p class="page-subtitle">Interferencia, batidos y formación de ondas estacionarias</p>
           </div>
-          <div class="page-number-indicator">Página 6</div>
+          <div class="page-number-indicator">Página 7</div>
         </header>
 
         <div class="concept-card">
@@ -385,7 +771,7 @@
           <p>El <strong>principio de superposición</strong> establece que cuando dos o más ondas coinciden en un punto del espacio, el desplazamiento resultante es la <em>suma algebraica</em> de los desplazamientos individuales:</p>
           <div class="equation-block">
             <div class="equation-content">$$y_{\text{res}}(x,t) = \sum_{i=1}^{N} y_i(x,t) = y_1 + y_2 + \cdots + y_N$$</div>
-            <div class="equation-tag">Ec. (8)</div>
+            <div class="equation-tag">Ec. (16)</div>
           </div>
           <p>Este principio es válido mientras el medio sea <strong>lineal</strong> (la respuesta es proporcional a la perturbación).</p>
         </div>
@@ -395,7 +781,7 @@
           <p>Para dos ondas sinusoidales de la misma frecuencia y amplitud que viajan en la misma dirección con diferencia de fase $\Delta\varphi$:</p>
           <div class="equation-block">
             <div class="equation-content">$$y_1 + y_2 = 2A\cos\!\left(\frac{\Delta\varphi}{2}\right)\text{sen}\!\left(kx - \omega t + \frac{\Delta\varphi}{2}\right)$$</div>
-            <div class="equation-tag">Ec. (9)</div>
+            <div class="equation-tag">Ec. (17)</div>
           </div>
           <div class="block-datos">
             <strong>Interferencia constructiva:</strong> $\Delta\varphi = 0, 2\pi, 4\pi, \ldots$ → amplitud máxima $2A$
@@ -410,7 +796,7 @@
           <p>Cuando dos ondas de <em>frecuencias cercanas</em> $f_1$ y $f_2$ se superponen, se producen variaciones periódicas de amplitud llamadas <strong>batidos</strong>:</p>
           <div class="equation-block">
             <div class="equation-content">$$f_{\text{batido}} = |f_1 - f_2|$$</div>
-            <div class="equation-tag">Ec. (10)</div>
+            <div class="equation-tag">Ec. (18)</div>
           </div>
         </div>
 
@@ -437,9 +823,9 @@
     </section>
 
     <!-- ══════════════════════════════════════════════════════════
-         PÁGINA 7: LABORATORIO VIRTUAL INTERACTIVO
+         PÁGINA 8: LABORATORIO VIRTUAL INTERACTIVO
          ══════════════════════════════════════════════════════════ -->
-    <section class="notebook-sheet is-content-page notebook-page" id="page-7" aria-label="Página 7: Simulador de Ondas">
+    <section class="notebook-sheet is-content-page notebook-page" id="page-8" aria-label="Página 8: Simulador de Ondas">
       <div class="page-inner-content">
         <header class="page-editorial-header">
           <div>
@@ -447,7 +833,7 @@
             <h1 class="page-title">Simulador Interactivo de Ondas</h1>
             <p class="page-subtitle">Plano cartesiano estilo GeoGebra · Principio de superposición · Tiempo real</p>
           </div>
-          <div class="page-number-indicator">Página 7</div>
+          <div class="page-number-indicator">Página 8</div>
         </header>
 
         <!-- ── SIMULADOR ─────────────────────────────────────── -->
@@ -687,9 +1073,9 @@
     </section>
 
     <!-- ══════════════════════════════════════════════════════════
-         PÁGINA 8: EJERCICIOS RESUELTOS
+         PÁGINA 9: EJERCICIOS RESUELTOS
          ══════════════════════════════════════════════════════════ -->
-    <section class="notebook-sheet is-content-page notebook-page" id="page-8" aria-label="Página 8: Ejercicios">
+    <section class="notebook-sheet is-content-page notebook-page" id="page-9" aria-label="Página 9: Ejercicios">
       <div class="page-inner-content">
         <header class="page-editorial-header">
           <div>
@@ -697,7 +1083,7 @@
             <h1 class="page-title">Ejercicios Resueltos con Protocolo de Color</h1>
             <p class="page-subtitle">Datos (azul) · Incógnitas (rojo) · Resultados (naranja) · Validación (verde)</p>
           </div>
-          <div class="page-number-indicator">Página 8</div>
+          <div class="page-number-indicator">Página 9</div>
         </header>
 
         <div class="concept-card">
@@ -736,13 +1122,48 @@
             <span class="valido">Comprobación:</span> Como $0 < \Delta\varphi < \pi$, la amplitud debe estar entre $0$ y $2A = 6$. Se tiene $5.196 \in (0, 6)$. ✓
           </div>
         </div>
+
+        <div class="concept-card">
+          <h2 class="concept-card-title"><span>Ej. 3.</span> Cinemática Completa de una Onda Armónica Simple</h2>
+          <p>
+            Una onda armónica transversal que se propaga por una cuerda tensa con densidad lineal $\mu = 0.04\,\text{kg/m}$ tiene por ecuación:
+            $$y(x,t) = 0.06 \cdot \sen(4\pi x - 20\pi t + \pi/4) \quad [\text{en unidades SI: m, s}]$$
+            Determine la velocidad de onda, la velocidad transversal máxima de una partícula, la aceleración transversal máxima, y la potencia media transportada por la cuerda.
+          </p>
+          <div class="block-datos">
+            <span class="datos">Datos:</span> $A = 0.06\,\text{m}$, $k = 4\pi\,\text{rad/m}$, $\omega = 20\pi\,\text{rad/s}$, $\phi_0 = \pi/4\,\text{rad}$, $\mu = 0.04\,\text{kg/m}$. Signo $(-)$ en el argumento.
+          </div>
+          <div class="block-incognitas">
+            <span class="incognita">Incógnitas:</span> $v = ?$, $v_{y,\text{máx}} = ?$, $a_{y,\text{máx}} = ?$, $\bar{P} = ?$
+          </div>
+          <div class="block-resuelto">
+            <span class="resuelto">Solución Analítica:</span><br>
+            <strong>1. Velocidad de propagación de la onda (de fase):</strong><br>
+            $$v = \frac{\omega}{k} = \frac{20\pi\,\text{rad/s}}{4\pi\,\text{rad/m}} = \boxed{5.00\,\text{m/s}} \quad \text{(hacia la derecha, }+x\text{)}$$
+            <br>
+            <strong>2. Velocidad transversal máxima de oscilación de las partículas:</strong><br>
+            $$v_{y,\text{máx}} = \omega A = (20\pi\,\text{rad/s})(0.06\,\text{m}) = 1.2\pi \approx \boxed{3.77\,\text{m/s}}$$
+            <br>
+            <strong>3. Aceleración transversal máxima (condición de M.A.S.):</strong><br>
+            $$a_{y,\text{máx}} = \omega^2 A = (20\pi\,\text{rad/s})^2(0.06\,\text{m}) = 24\pi^2 \approx \boxed{236.9\,\text{m/s}^2}$$
+            <br>
+            <strong>4. Potencia media transmitida por la onda:</strong><br>
+            $$\bar{P} = \frac{1}{2}\mu v \omega^2 A^2 = \frac{1}{2}(0.04\,\text{kg/m})(5.0\,\text{m/s})(20\pi\,\text{rad/s})^2(0.06\,\text{m})^2$$
+            $$\bar{P} = (0.10)(3947.84)(0.0036) = \boxed{1.42\,\text{W}}$$
+          </div>
+          <div class="block-valido">
+            <span class="valido">Validación y Análisis Físico:</span><br>
+            • $\lambda = \frac{2\pi}{k} = 0.50\,\text{m}$, $f = \frac{\omega}{2\pi} = 10.0\,\text{Hz} \implies v = \lambda f = (0.50)(10.0) = 5.0\,\text{m/s}$. Coincide exactamente. ✓<br>
+            • Nótese la marcada distinción: la onda avanza a $5.00\,\text{m/s}$ horizontalmente, mientras que cada partícula de la cuerda oscila verticalmente a una rapidez máxima de $3.77\,\text{m/s}$. ✓
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- ══════════════════════════════════════════════════════════
-         PÁGINA 9: GLOSARIO
+         PÁGINA 10: GLOSARIO
          ══════════════════════════════════════════════════════════ -->
-    <section class="notebook-sheet is-content-page notebook-page" id="page-9" aria-label="Página 9: Glosario">
+    <section class="notebook-sheet is-content-page notebook-page" id="page-10" aria-label="Página 10: Glosario">
       <div class="page-inner-content">
         <header class="page-editorial-header">
           <div>
@@ -750,7 +1171,7 @@
             <h1 class="page-title">Glosario Científico Ilustrado</h1>
             <p class="page-subtitle">Términos, símbolos, unidades SI y definiciones del Movimiento Ondulatorio</p>
           </div>
-          <div class="page-number-indicator">Página 9</div>
+          <div class="page-number-indicator">Página 10</div>
         </header>
 
         <div class="glossary-search-box">
@@ -765,9 +1186,9 @@
     </section>
 
     <!-- ══════════════════════════════════════════════════════════
-         PÁGINA 10: REFERENCIAS APA 7
+         PÁGINA 11: REFERENCIAS APA 7
          ══════════════════════════════════════════════════════════ -->
-    <section class="notebook-sheet is-content-page notebook-page" id="page-10" aria-label="Página 10: Referencias">
+    <section class="notebook-sheet is-content-page notebook-page" id="page-11" aria-label="Página 11: Referencias">
       <div class="page-inner-content">
         <header class="page-editorial-header">
           <div>
@@ -775,7 +1196,7 @@
             <h1 class="page-title">Referencias Bibliográficas</h1>
             <p class="page-subtitle">Normas APA 7 — Física Ondulatoria y Recursos Universitarios</p>
           </div>
-          <div class="page-number-indicator">Página 10</div>
+          <div class="page-number-indicator">Página 11</div>
         </header>
 
         <div class="apa-references-list">
@@ -821,12 +1242,13 @@
       <option value="2">Pág. 2 — Mapa Mental</option>
       <option value="3">Pág. 3 — Historia</option>
       <option value="4">Pág. 4 — Conceptos</option>
-      <option value="5">Pág. 5 — Ecuación de Onda</option>
-      <option value="6">Pág. 6 — Superposición</option>
-      <option value="7">Pág. 7 — Simulador</option>
-      <option value="8">Pág. 8 — Ejercicios</option>
-      <option value="9">Pág. 9 — Glosario</option>
-      <option value="10">Pág. 10 — Referencias</option>
+      <option value="5">Pág. 5 — Onda Armónica Simple</option>
+      <option value="6">Pág. 6 — Ecuación de Onda</option>
+      <option value="7">Pág. 7 — Superposición</option>
+      <option value="8">Pág. 8 — Simulador</option>
+      <option value="9">Pág. 9 — Ejercicios</option>
+      <option value="10">Pág. 10 — Glosario</option>
+      <option value="11">Pág. 11 — Referencias</option>
     </select>
     <span id="page-counter-badge" class="page-counter-badge">Portada</span>
     <button id="btn-next-page" class="btn-nav" title="Página siguiente" aria-label="Página siguiente">
@@ -844,12 +1266,13 @@
     <button class="toc-item-btn" data-target-page="2"><span class="toc-item-num">2</span> Mapa Mental</button>
     <button class="toc-item-btn" data-target-page="3"><span class="toc-item-num">3</span> Historia</button>
     <button class="toc-item-btn" data-target-page="4"><span class="toc-item-num">4</span> Conceptos y Definiciones</button>
-    <button class="toc-item-btn" data-target-page="5"><span class="toc-item-num">5</span> Ecuación de Onda</button>
-    <button class="toc-item-btn" data-target-page="6"><span class="toc-item-num">6</span> Principio de Superposición</button>
-    <button class="toc-item-btn" data-target-page="7"><span class="toc-item-num">7</span> Simulador Interactivo</button>
-    <button class="toc-item-btn" data-target-page="8"><span class="toc-item-num">8</span> Ejercicios Resueltos</button>
-    <button class="toc-item-btn" data-target-page="9"><span class="toc-item-num">9</span> Glosario</button>
-    <button class="toc-item-btn" data-target-page="10"><span class="toc-item-num">10</span> Referencias APA 7</button>
+    <button class="toc-item-btn" data-target-page="5"><span class="toc-item-num">5</span> Onda Armónica Simple</button>
+    <button class="toc-item-btn" data-target-page="6"><span class="toc-item-num">6</span> Ecuación de Onda</button>
+    <button class="toc-item-btn" data-target-page="7"><span class="toc-item-num">7</span> Principio de Superposición</button>
+    <button class="toc-item-btn" data-target-page="8"><span class="toc-item-num">8</span> Simulador Interactivo</button>
+    <button class="toc-item-btn" data-target-page="9"><span class="toc-item-num">9</span> Ejercicios Resueltos</button>
+    <button class="toc-item-btn" data-target-page="10"><span class="toc-item-num">10</span> Glosario</button>
+    <button class="toc-item-btn" data-target-page="11"><span class="toc-item-num">11</span> Referencias APA 7</button>
     <button id="btn-close-toc" class="btn-close-toc">✕ Cerrar índice</button>
   </nav>
 
@@ -1244,13 +1667,14 @@
 <script src="js/wave-engine.js"></script>
 <script src="js/wave-canvas.js"></script>
 <script src="js/wave-ui.js"></script>
+<script src="js/harmonic-wave.js"></script>
 
 <script>
 // ──────────────────────────────────────────────────────────────
 // SISTEMA DE PÁGINAS (SPA)
 // ──────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
-  const TOTAL_PAGES = 11;
+  const TOTAL_PAGES = 12;
   let currentPage = 0;
   let simulatorInitialized = false;
 
@@ -1302,28 +1726,37 @@ document.addEventListener('DOMContentLoaded', () => {
       } catch(e) { /* silencioso */ }
     }
 
-    // Inicializar el simulador la primera vez que se llega a la página 7
-    if (idx === 7 && !simulatorInitialized) {
+    // Inicializar gráficos de Onda Armónica Simple en página 5
+    if (idx === 5) {
+      setTimeout(() => {
+        if (typeof initHarmonicWaveGraphs === 'function') {
+          initHarmonicWaveGraphs();
+        }
+      }, 60);
+    }
+
+    // Inicializar el simulador la primera vez que se llega a la página 8
+    if (idx === 8 && !simulatorInitialized) {
       simulatorInitialized = true;
       setTimeout(() => {
         initWaveSimulator();
-        // Glosario
         _initGlossary();
       }, 100);
-    } else if (idx === 7 && simulatorInitialized) {
-      // Redimensionar canvas
+    } else if (idx === 8 && simulatorInitialized) {
+      // Redimensionar canvas del simulador
       setTimeout(() => {
         if (waveUI) { waveUI.mainCanvas.resize(); }
       }, 50);
     }
 
-    // Inicializar glosario en página 9
-    if (idx === 9) _initGlossary();
+    // Inicializar glosario en página 10
+    if (idx === 10) _initGlossary();
   }
 
   // ── Glosario ────────────────────────────────────────────────
   const GLOSSARY = [
     { term: 'Onda',         symbol: 'y(x,t)', unit: '—',     def: 'Perturbación que se propaga en el espacio y el tiempo transportando energía sin transporte neto de materia.' },
+    { term: 'Onda armónica simple', symbol: 'y=A·sen(kx∓ωt+φ₀)', unit: 'm', def: 'Perturbación sinusoidal periódica pura generada por un oscilador armónico simple en la que cada partícula ejecuta un M.A.S.' },
     { term: 'Amplitud',     symbol: 'A',       unit: 'm',     def: 'Valor máximo del desplazamiento de la onda respecto a la posición de equilibrio.' },
     { term: 'Longitud de onda', symbol: 'λ',  unit: 'm',     def: 'Distancia espacial entre dos puntos consecutivos con igual fase, p.ej. entre dos crestas.' },
     { term: 'Frecuencia',   symbol: 'f',       unit: 'Hz',    def: 'Número de ciclos completos que la onda realiza por segundo. $f = 1/T$.' },
@@ -1331,6 +1764,9 @@ document.addEventListener('DOMContentLoaded', () => {
     { term: 'Número de onda', symbol: 'k',    unit: 'rad/m', def: 'Cantidad $k = 2\\pi/\\lambda$. Representa cuántos ciclos caben en $2\\pi$ metros.' },
     { term: 'Frecuencia angular', symbol: 'ω', unit: 'rad/s', def: 'Cantidad $\\omega = 2\\pi f$. Tasa de cambio de la fase en el tiempo.' },
     { term: 'Velocidad de fase', symbol: 'v', unit: 'm/s',   def: 'Velocidad a la que se propaga la fase de la onda: $v = \\omega/k = \\lambda f$.' },
+    { term: 'Velocidad transversal de partícula', symbol: 'v_y', unit: 'm/s', def: 'Rapidez de oscilación vertical del medio: $v_y = \\partial y/\\partial t = -\\omega A\\cos(kx \\mp \\omega t)$. Diferente de la velocidad de propagación $v$.' },
+    { term: 'Aceleración transversal', symbol: 'a_y', unit: 'm/s²', def: 'Aceleración restauradora del elemento de cuerda: $a_y = \\partial^2 y/\\partial t^2 = -\\omega^2 y$. Condición estricta de M.A.S.' },
+    { term: 'Potencia media de onda', symbol: 'P̄', unit: 'W', def: 'Energía promedio transportada por unidad de tiempo: $\\bar{P} = \\frac{1}{2}\\mu v\\omega^2 A^2$. Proporcional a $A^2$ y $\\omega^2$.' },
     { term: 'Superposición', symbol: '∑yᵢ',   unit: 'm',     def: 'Principio que establece que la perturbación total es la suma de las perturbaciones individuales.' },
     { term: 'Interferencia', symbol: '—',      unit: '—',     def: 'Fenómeno resultante de la superposición de dos o más ondas que produce regiones de amplitud máxima (constructiva) o nula (destructiva).' },
     { term: 'Batido',       symbol: 'fₜ',      unit: 'Hz',    def: 'Variación periódica de amplitud producida al superponer dos ondas de frecuencias muy próximas. $f_{bat} = |f_1 - f_2|$.' },
